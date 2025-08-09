@@ -1,7 +1,10 @@
 /* Base (reset + variables + utilities) */
 :root {
-    --font-sans: 'Noto Sans TC', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --font-serif: 'Merriweather', Georgia, serif;
+    /* Unified Chinese / English font stack (Noto Sans TC includes Latin glyphs) */
+    /* Try self-hosted local family name first (defined in fonts.css), fallback to Google-served family if files missing */
+    --font-sans: 'Noto Sans TC Local', 'Noto Sans TC', 'Noto Sans', 'Segoe UI', Roboto, Helvetica, Arial, system-ui, sans-serif;
+    /* Serif no longer separate – point to same unified family to keep existing var references working */
+    --font-serif: var(--font-sans);
     /* Light (default) */
     --color-bg: #0e1116;
     --color-surface: #1a1f27;

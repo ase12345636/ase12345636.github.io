@@ -83,7 +83,7 @@
 
 .record-list.ordered>.record-item:before {
     font-size: .8rem;
-    font-family: 'Noto Sans TC', var(--font-sans, sans-serif);
+    font-family: var(--font-sans);
     line-height: 1;
     top: 1.0rem;
 }
