@@ -161,7 +161,6 @@
 .hero-photo {
     border-radius: var(--radius-md);
     overflow: hidden;
-    /* 移除外框陰影 */
     box-shadow: none;
     position: relative;
     border: none !important;
@@ -175,14 +174,12 @@
     outline: none;
 }
 
-/* 移除可能的 focus 藍色外框 */
 .hero-photo img:focus {
     outline: none;
     box-shadow: none;
 }
 
 .hero-photo:after {
-    /* 移除覆蓋層與任何可見邊框效果 */
     content: none;
 }
 

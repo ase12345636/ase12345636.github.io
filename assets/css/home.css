@@ -1,4 +1,4 @@
-/* Home specific */
+/* Home */
 .hero-intro {
     font-size: 1.05rem;
     max-width: 65ch;
@@ -33,7 +33,6 @@
     font-weight: 600;
 }
 
-/* Social mini buttons under contact */
 .social-mini {
     margin-top: 1.2rem;
     display: flex;
@@ -66,12 +65,10 @@
     color: #222;
 }
 
-/* Stronger emphasis for hero name */
 .name-strong {
     font-weight: 700;
 }
 
-/* Featured publications list on home */
 .featured-pubs {
     list-style: none;
     margin: 0;
@@ -90,9 +87,13 @@
     content: counter(feat) ".";
     position: absolute;
     left: 0;
-    top: .15rem;
+    /* 調整垂直位置讓數字基線與文字首行對齊 */
+    top: .3rem;
+    /* 如仍偏高/低可微調 ±.02rem */
     font-weight: 600;
-    font-size: .9rem;
+    font-size: .82rem;
+    /* 與 citation 文字一致，避免視覺高度差 */
+    line-height: 1;
     color: #fff;
     opacity: .85;
 }
