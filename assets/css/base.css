@@ -12,7 +12,7 @@
     /* updated from #ff6b91 to white */
     --color-text: #e6e9ef;
     --color-text-invert: #0e1116;
-    --color-muted: #9aa4b1;
+    --color-muted: #9aa4b1ce;
     --color-border: #2c3642;
     --color-soft-bg: #192129;
     --radius-sm: 4px;
@@ -59,7 +59,10 @@ a:focus {
 a:focus-visible,
 button:focus-visible,
 .nav-toggle:focus-visible {
-    outline: 2px solid var(--color-secondary);
+    --color-secondary: #ffffff;
+    /* secondary (text / neutral) */
+    --color-accent: #ff6b91;
+    /* accent 強調色 */
     outline-offset: 2px;
 }
 
@@ -69,6 +72,47 @@ button:focus-visible,
     width: 1px;
     height: 1px;
     padding: 0;
+
+    .mt-0 {
+        margin-top: 0 !important
+    }
+
+    .mb-0 {
+        margin-bottom: 0 !important
+    }
+
+    .mt-sm {
+        margin-top: .5rem !important
+    }
+
+    .mb-sm {
+        margin-bottom: .5rem !important
+    }
+
+    .mt-md {
+        margin-top: 1rem !important
+    }
+
+    .mb-md {
+        margin-bottom: 1rem !important
+    }
+
+    .text-small {
+        font-size: .8rem !important
+    }
+
+    .text-muted {
+        color: var(--color-muted) !important
+    }
+
+    .list-tight {
+        margin: .4rem 0 .2rem 1.1rem !important
+    }
+
+    .list-tight li {
+        margin-bottom: .25rem
+    }
+
     margin: -1px;
     overflow: hidden;
     clip: rect(0 0 0 0);

@@ -24,6 +24,119 @@
     line-height: 1.7;
 }
 
+/* Hierarchical section blocks inside bio */
+.bio-section {
+    margin: 0 0 2.4rem;
+}
+
+.bio-section:last-child {
+    margin-bottom: 0;
+}
+
+.bio-section-header {
+    background: none;
+    padding: 0 0 .45rem;
+    font-size: 1.12rem;
+    /* header 字體略大 */
+    font-weight: 600;
+    letter-spacing: .5px;
+    border: none;
+    border-bottom: 2px solid var(--color-border);
+    /* 底線分隔 */
+    border-radius: 0;
+}
+
+.bio-section-body {
+    background: none;
+    padding: .75rem 0 0;
+    /* 上方留一點距離 */
+    border: none;
+    border-radius: 0;
+}
+
+.bio-section-body ul {
+    margin: 0 0 .9rem 1.1rem;
+    padding: 0;
+}
+
+/* intro 沒有 header 時，與後面區塊保持一致間距 */
+#intro {
+    margin-bottom: 2.4rem;
+}
+
+#intro p:first-child {
+    margin-top: 0;
+}
+
+.bio-divider {
+    height: 2px;
+    background: var(--color-border);
+    margin: 2.2rem 0 2rem;
+    border-radius: 1px;
+}
+
+/* Accordion (檢定與證照) */
+.accordion {
+    margin-top: .25rem;
+}
+
+.accordion details {
+    border-bottom: 2px solid var(--color-border);
+    padding: 0 0 1.2rem;
+    margin: 0 0 2.2rem;
+}
+
+.accordion details:last-child {
+    margin-bottom: 0;
+}
+
+.accordion summary {
+    cursor: pointer;
+    font-weight: 500;
+    /* 不加粗 */
+    font-size: .95rem;
+    /* 縮小 */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    outline: none;
+}
+
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion summary::after {
+    content: '+';
+    margin-left: auto;
+    font-size: 1.25rem;
+    /* 放大符號 */
+    line-height: 1;
+    transition: color .2s;
+}
+
+.accordion details[open]>summary::after {
+    content: '-';
+}
+
+.accordion ul {
+    margin: .65rem 0 0 1.1rem;
+    padding: 0;
+}
+
+.accordion ul ul {
+    margin-top: .35rem;
+}
+
+.accordion li {
+    margin-bottom: .65rem;
+}
+
+.accordion li:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width:760px) {
     .profile-grid {
         grid-template-columns: 1fr;

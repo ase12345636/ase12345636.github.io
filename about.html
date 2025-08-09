@@ -29,18 +29,89 @@
                     <div>
                         <div class="profile-photo"><img src="assets/img/profile.jpg" alt="張簡雲翔 照片" loading="lazy" />
                         </div>
+                        <br>
                         <div class="profile-meta">
-                            <p><strong>中文姓名：</strong> 張簡雲翔</p>
-                            <p><strong>英文姓名：</strong> Yun-Xiang Zhang Jian</p>
-                            <p><strong>現職 / 身份：</strong> 國立臺灣師範大學 資訊工程學系 碩士班</p>
-                            <p><strong>研究領域：</strong> （請填入：如 機器學習、深度學習、資料探勘、自然語言處理...）</p>
-                            <p><strong>Email：</strong> <a href="mailto:ase12345636@gmail.com">ase12345636@gmail.com</a>
+                            <p><strong>姓名：</strong> 張簡雲翔</p>
+                            <p><strong>姓名拼音：</strong> Yun-Xiang Zhang Jian</p>
+                            <p><strong>現職：</strong><br><small style="font-size:.78rem">國立臺灣師範大學資訊工程學系碩士班學生</small></p>
+                            <p><strong>Email：</strong> <a href="mailto:61447004s@ntnu.edu.tw">61447004s@ntnu.edu.tw</a>
                             </p>
-                            <p><strong>LineID：</strong> ase12345636</p>
                         </div>
                     </div>
                     <div class="bio">
-                        <!-- TODO: 撰寫個人簡介：研究興趣 / 經歷總結 / 未來目標 -->
+                        <div class="bio-section" id="intro">
+                            <p><small style="font-size:1.1rem;">你好，我是張簡雲翔，很常被簡稱叫做張簡。</small></p>
+                        </div>
+                        <div class="bio-section" id="skills">
+                            <div class="bio-section-header">專長</div>
+                            <div class="bio-section-body">
+                                <ul>
+                                    <li><strong>機器學習：</strong> 算是最有興趣的研究領域，最有興趣的是自然語言處理</li>
+                                    <li><strong>程式設計：</strong> 主要使用C++，其他語言我相信需要隨時都可以學會</li>
+                                    <li><strong>電腦維修：</strong> 算是一個踏入這個電腦科學的理由，會修但是有點手生</li>
+                                    <li><strong>領導能力：</strong> 算多少當過了一些組織的負責人，還是有點領導能力的</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bio-section" id="interests">
+                            <div class="bio-section-header">興趣</div>
+                            <div class="bio-section-body">
+                                <ul>
+                                    <li>資訊新知：在資訊的世界，總是會有讓人意想不到的事情發生</li>
+                                    <li>日本文化：輕小說、漫畫、動漫，實在是太好看了，大推『ユイカ』</li>
+                                    <li>收藏印章：做了不少身分，走過很多地方，還是想留下點紀錄</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bio-section" id="certs">
+                            <div class="bio-section-header">檢定與證照</div>
+                            <div class="bio-section-body">
+                                <div class="accordion" id="cert-accordion">
+                                    <details class="acc-item">
+                                        <summary>資訊能力</summary>
+                                        <ul>
+                                            <li>大學程式設計檢定（CPE），臺灣程式設計競賽委員會
+                                                <ul>
+                                                    <li>專業級（4題），2024.04</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                    <details class="acc-item">
+                                        <summary>語言能力</summary>
+                                        <ul>
+                                            <li>培力英語能力檢定測驗，財團法人語言訓練測驗中心
+                                                <ul>
+                                                    <li>中聽力：B1+／閱讀：B1，2025.06</li>
+                                                </ul>
+                                            </li>
+                                            <li>中小學生台語認證測驗，國立成功大學台灣語文測驗中心
+                                                <ul>
+                                                    <li>A2 初級，2017.07</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                    <details class="acc-item">
+                                        <summary>數理能力</summary>
+                                        <ul>
+                                            <li><small style="font-size: .60;">
+                                                    American Mathematics Competitions（AMC），The Mathematical Association
+                                                    of American</small>
+                                                <ul>
+                                                    <li>AMC12A（88.5），2021.02</li>
+                                                </ul>
+                                            </li>
+                                            <li>全國高中數理能力檢定（APX），國立交通大學理學院
+                                                <ul>
+                                                    <li>生物科－中高級，2020.08</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,6 +119,7 @@
     </main>
     <div id="site-footer"></div>
     <script src="assets/js/layout.js"></script>
+    <script src="assets/js/about.js"></script>
 </body>
 
 </html>

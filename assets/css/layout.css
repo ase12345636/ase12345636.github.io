@@ -70,6 +70,10 @@
     top: 7px;
 }
 
+.nav-toggle span:after {
+    top: 7px;
+}
+
 .nav-open .nav-toggle span {
     background: transparent;
 }
@@ -106,7 +110,7 @@
     bottom: 4px;
     height: 2px;
     width: 0;
-    background: var(--color-secondary);
+    background: var(--color-accent);
     transition: var(--transition);
 }
 
