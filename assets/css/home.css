@@ -29,7 +29,7 @@
     font-size: .75rem;
     letter-spacing: .5px;
     text-transform: uppercase;
-    color: var(--color-secondary);
+    color: #fff;
     font-weight: 600;
 }
 
@@ -53,7 +53,7 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     background: var(--color-soft-bg);
-    color: var(--color-text);
+    color: #fff;
     transition: var(--transition);
     text-decoration: none;
     min-width: 0;
@@ -61,7 +61,7 @@
 }
 
 .social-mini-btn:hover {
-    background: var(--color-secondary);
-    border-color: var(--color-secondary);
-    color: #fff;
+    background: #fff;
+    border-color: #fff;
+    color: #222;
 }

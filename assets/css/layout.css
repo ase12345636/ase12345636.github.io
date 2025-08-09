@@ -16,6 +16,7 @@
 }
 
 .brand {
+    color: #fff;
     font-weight: 600;
     font-size: 1.05rem;
     letter-spacing: .5px;
@@ -29,7 +30,7 @@
     height: 40px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid var(--color-primary);
+    border: none;
 }
 
 .nav-toggle {
@@ -94,7 +95,7 @@
     padding: .55rem .2rem;
     font-size: .9rem;
     font-weight: 500;
-    color: var(--color-text);
+    color: inherit;
     position: relative;
 }
 
@@ -156,22 +157,29 @@
 .hero-photo {
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+    /* 移除外框陰影 */
+    box-shadow: none;
     position: relative;
+    border: none !important;
 }
 
 .hero-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: none;
+    outline: none;
+}
+
+/* 移除可能的 focus 藍色外框 */
+.hero-photo img:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .hero-photo:after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(145deg, rgba(18, 60, 105, .05), rgba(172, 59, 97, .08));
-    mix-blend-mode: multiply;
+    /* 移除覆蓋層與任何可見邊框效果 */
+    content: none;
 }
 
 .hero-text h1 span {

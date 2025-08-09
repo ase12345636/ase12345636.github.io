@@ -45,13 +45,35 @@ img {
 }
 
 a {
-    color: var(--color-primary);
+    color: #fff;
     text-decoration: none;
 }
 
 a:hover,
 a:focus {
-    color: var(--color-primary-accent);
+    color: #fff;
+}
+
+/* 可鍵盤操作的可見聚焦樣式（避免完全無邊框） */
+a:focus-visible,
+button:focus-visible,
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* 無障礙隱藏文字工具類 */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
 }
 
 h1,
@@ -115,8 +137,8 @@ ol {
     display: inline-flex;
     align-items: center;
     gap: .4rem;
-    background: var(--color-primary);
-    color: var(--color-text-invert);
+    background: #fff;
+    color: #222;
     padding: .6rem 1rem;
     border-radius: var(--radius-sm);
     font-weight: 500;
@@ -125,20 +147,20 @@ ol {
 }
 
 .btn:hover {
-    background: var(--color-primary-accent);
+    background: #e6e6e6;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
+    color: #fff;
+    border: 1px solid #fff;
 }
 
 .btn-outline:hover {
-    background: var(--color-primary);
-    color: var(--color-text-invert);
+    background: #fff;
+    color: #222;
 }
 
 .card {
