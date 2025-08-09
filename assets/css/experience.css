@@ -6,23 +6,32 @@
     color: var(--color-muted);
 }
 
-.exp-subtitle {
-    font-size: 1.3rem;
-    margin: 2.4rem 0 1rem;
-    position: relative;
-    padding-left: .85rem;
+/* Unified record headings */
+.record-heading {
+    font-size: 1.14rem;
+    margin: 1.2rem 0 .35rem;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0;
 }
 
-.exp-subtitle:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: .35rem;
-    bottom: .35rem;
-    width: 4px;
-    border-radius: 2px;
-    background: var(--color-secondary);
+.record-group {
+    margin: 0 0 .6rem;
 }
+
+.record-group:first-of-type .record-heading {
+    margin-top: .6rem;
+}
+
+.record-group:last-of-type {
+    margin-bottom: 0;
+}
+
+/* 保留舊樣式備份 (如需回退) */
+/*
+.exp-subtitle { ... }
+.exp-subtitle:before { ... }
+*/
 
 .timeline-item ul.bullets {
     margin: .4rem 0 .2rem 1.1rem;
@@ -32,6 +41,68 @@
 
 .timeline-item ul.bullets li {
     margin-bottom: .25rem;
+}
+
+/* Ordered list styles (card pattern) */
+.record-list.ordered {
+    counter-reset: record;
+    list-style: none;
+    margin: 0 0 .4rem;
+    padding: 0;
+}
+
+.record-item {
+    position: relative;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: .65rem .7rem .7rem 2rem;
+    margin: 0 0 .4rem;
+}
+
+.record-item:last-child {
+    margin-bottom: 0;
+}
+
+.record-list.ordered>.record-item:before {
+    counter-increment: record;
+    content: counter(record) ".";
+    position: absolute;
+    left: .65rem;
+    top: .65rem;
+    font-weight: 600;
+    font-size: .75rem;
+    color: var(--color-secondary);
+    letter-spacing: 0;
+}
+
+.record-item h3 {
+    margin: 0 0 .15rem;
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+.record-meta-period {
+    font-size: .6rem;
+    letter-spacing: 0;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    margin-bottom: .25rem;
+}
+
+.record-points {
+    margin: .25rem 0 0 1rem;
+    padding: 0;
+    font-size: .8rem;
+    line-height: 1.45;
+}
+
+.record-points li {
+    margin-bottom: .18rem;
+}
+
+.record-points li:last-child {
+    margin-bottom: 0;
 }
 
 .exp-note {

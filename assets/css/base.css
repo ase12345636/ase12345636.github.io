@@ -12,7 +12,7 @@
     /* updated from #ff6b91 to white */
     --color-text: #e6e9ef;
     --color-text-invert: #0e1116;
-    --color-muted: #9aa4b1ce;
+    --color-muted: #bfc6cf;
     --color-border: #2c3642;
     --color-soft-bg: #192129;
     --radius-sm: 4px;
@@ -21,6 +21,12 @@
     --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.55);
     --max-width: 980px;
     --transition: .25s cubic-bezier(.4, 0, .2, 1);
+    /* Spacing scale */
+    --space-2xs: .15rem;
+    --space-xs: .25rem;
+    --space-sm: .4rem;
+    --space-md: .6rem;
+    --space-lg: 1rem;
 }
 
 * {
@@ -164,6 +170,63 @@ ol {
 
 .text-muted {
     color: var(--color-muted);
+}
+
+/* Generic compact list card pattern (shared by education & experience) */
+.list-cards {
+    list-style: none;
+    margin: 0 0 var(--space-md);
+    padding: 0;
+}
+
+.list-cards:last-of-type {
+    margin-bottom: 0;
+}
+
+.list-card {
+    position: relative;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: .75rem .85rem .8rem;
+    margin: 0 0 var(--space-sm);
+}
+
+.list-card:last-child {
+    margin-bottom: 0;
+}
+
+.list-card h3 {
+    margin: 0 0 var(--space-xs);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.list-card .meta-line {
+    font-size: .6rem;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin: 0 0 var(--space-xs);
+    letter-spacing: 0;
+}
+
+.list-card .small {
+    font-size: .75rem;
+}
+
+.tight-points {
+    margin: var(--space-xs) 0 0 1rem;
+    padding: 0;
+    font-size: .8rem;
+    line-height: 1.45;
+}
+
+.tight-points li {
+    margin: 0 0 var(--space-2xs);
+}
+
+.tight-points li:last-child {
+    margin: 0;
 }
 
 .tag {
