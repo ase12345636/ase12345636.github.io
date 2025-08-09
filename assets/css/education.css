@@ -1,44 +1,75 @@
-/* Education page */
+/* Education page (compressed spacing) */
+.edu-category {
+    font-size: 1.25rem;
+    margin: 1.4rem 0 .25rem;
+    /* 上下距縮短 */
+    position: relative;
+    padding-left: 0;
+    font-family: var(--font-serif);
+    font-weight: 600;
+}
+
+.edu-category:first-of-type {
+    margin-top: .3rem;
+}
+
+.edu-category:before {
+    content: none;
+}
+
+/* List spacing tightened */
 .edu-list {
     list-style: none;
-    margin: 0;
+    margin: 0 0 .9rem;
+    /* 每個分類間距 */
     padding: 0;
 }
 
+.edu-list:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Individual education item */
 .edu-item {
-    padding: 1.2rem 1rem 1.3rem;
+    padding: 1rem .9rem 1.05rem;
+    /* 減少內距 */
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    background: var(--color-surface);
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 1rem;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: .6rem;
+    /* 更緊密的項目間距 */
+    backdrop-filter: none;
 }
 
 .edu-item:last-child {
     margin-bottom: 0;
 }
 
+/* 移除 hover 樣式，不再高亮 */
+/* .edu-item:hover { border-color: var(--color-accent); } */
+
 .edu-item h3 {
-    margin: .1rem 0 .3rem;
-    font-size: 1.05rem;
+    margin: 0 0 .25rem;
+    font-size: 1rem;
 }
 
 .edu-item .degree {
     font-weight: 600;
     color: var(--color-secondary);
-    font-size: .8rem;
-    letter-spacing: .75px;
+    font-size: .75rem;
+    letter-spacing: .7px;
     text-transform: uppercase;
 }
 
 .edu-item .period {
-    font-size: .7rem;
+    font-size: .65rem;
     letter-spacing: .5px;
     color: var(--color-muted);
     text-transform: uppercase;
 }
 
 .edu-item p {
-    margin: .6rem 0 0;
-    font-size: .9rem;
+    margin: .45rem 0 0;
+    font-size: .85rem;
 }
