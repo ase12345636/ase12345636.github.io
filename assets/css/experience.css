@@ -1,0 +1,51 @@
+/* Experience page */
+.exp-intro {
+    max-width: 760px;
+    font-size: 1rem;
+    margin-top: -.4rem;
+    color: var(--color-muted);
+}
+
+.exp-subtitle {
+    font-size: 1.3rem;
+    margin: 2.4rem 0 1rem;
+    position: relative;
+    padding-left: .85rem;
+}
+
+.exp-subtitle:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: .35rem;
+    bottom: .35rem;
+    width: 4px;
+    border-radius: 2px;
+    background: var(--color-secondary);
+}
+
+.timeline-item ul.bullets {
+    margin: .4rem 0 .2rem 1.1rem;
+    font-size: .85rem;
+    line-height: 1.5;
+}
+
+.timeline-item ul.bullets li {
+    margin-bottom: .25rem;
+}
+
+.exp-note {
+    margin-top: 3rem;
+    font-size: .8rem;
+    color: var(--color-muted);
+    background: var(--color-soft-bg);
+    border: 1px dashed var(--color-border);
+    padding: .8rem 1rem;
+    border-radius: var(--radius-md);
+}
+
+@media (max-width:640px) {
+    .exp-subtitle {
+        font-size: 1.15rem;
+    }
+}

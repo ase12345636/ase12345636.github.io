@@ -1,0 +1,337 @@
+/* Layout + navigation */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(14, 17, 22, .82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: .5px;
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+}
+
+.brand img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+}
+
+.nav-toggle {
+    background: none;
+    border: 0;
+    display: none;
+    cursor: pointer;
+    padding: .4rem;
+    margin-right: -.4rem;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-toggle span:before,
+.nav-toggle span:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+    transition: inherit;
+}
+
+.nav-toggle span:before {
+    top: -7px;
+}
+
+.nav-toggle span:after {
+    top: 7px;
+}
+
+.nav-open .nav-toggle span {
+    background: transparent;
+}
+
+.nav-open .nav-toggle span:before {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-open .nav-toggle span:after {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    display: inline-block;
+    padding: .55rem .2rem;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    position: relative;
+}
+
+.nav-menu a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    height: 2px;
+    width: 0;
+    background: var(--color-secondary);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover:after,
+.nav-menu a.active:after {
+    width: 100%;
+}
+
+@media (max-width: 860px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu-wrapper {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: var(--color-surface);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: var(--shadow-md);
+        transform-origin: top center;
+        transform: scaleY(0);
+        transition: var(--transition);
+    }
+
+    .nav-open .nav-menu-wrapper {
+        transform: scaleY(1);
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        padding: .6rem 1.2rem 1.2rem;
+    }
+
+    .nav-menu a {
+        padding: .7rem 0;
+    }
+}
+
+.main-hero {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-photo {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-photo:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(18, 60, 105, .05), rgba(172, 59, 97, .08));
+    mix-blend-mode: multiply;
+}
+
+.hero-text h1 span {
+    color: var(--color-secondary);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 960px) {
+    .main-hero {
+        grid-template-columns: 300px 1fr;
+        gap: 2.2rem;
+    }
+}
+
+@media (max-width: 760px) {
+    .main-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-photo {
+        max-width: 340px;
+    }
+}
+
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 1.2rem;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.8rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-point {
+    position: absolute;
+    left: -1px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    background: var(--color-primary);
+    border: 2px solid var(--color-bg);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.timeline-item h3 {
+    margin: 0 0 .2rem;
+    font-size: 1.05rem;
+}
+
+.timeline-item .meta {
+    font-size: .75rem;
+    letter-spacing: .5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: .4rem;
+}
+
+.pub-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pub-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+    display: grid;
+    gap: .4rem;
+}
+
+.pub-item:last-child {
+    border-bottom: 0;
+}
+
+.pub-item .title {
+    font-weight: 600;
+}
+
+.pub-item .authors {
+    font-size: .85rem;
+    color: var(--color-muted);
+}
+
+.pub-item .journal {
+    font-size: .75rem;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+}
+
+.pub-item a.pdf-link {
+    font-size: .7rem;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    padding: .2rem .55rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    margin-left: .5rem;
+}
+
+.pub-item a.pdf-link:hover {
+    background: var(--color-secondary);
+    color: #fff;
+}
+
+.honors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.2rem;
+}
+
+.honor-card {
+    padding: 1rem 1rem 1.2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.honor-card h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.honor-card .year {
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    color: var(--color-secondary);
+}
+
+/* Merged from honors.css */
+.honors-hero {
+    max-width: 680px;
+    font-size: 1rem;
+}
