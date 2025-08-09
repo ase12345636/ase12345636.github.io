@@ -8,7 +8,8 @@
     --color-surface-alt: #222a35;
     --color-primary: #4ea1ff;
     --color-primary-accent: #7bbdff;
-    --color-secondary: #ff6b91;
+    --color-secondary: #ffffff;
+    /* updated from #ff6b91 to white */
     --color-text: #e6e9ef;
     --color-text-invert: #0e1116;
     --color-muted: #9aa4b1;

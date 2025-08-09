@@ -65,3 +65,8 @@
     border-color: #fff;
     color: #222;
 }
+
+/* Stronger emphasis for hero name */
+.name-strong {
+    font-weight: 800;
+}
