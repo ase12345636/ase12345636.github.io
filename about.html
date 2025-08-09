@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
+    <!-- Components for record items & accordion -->
+    <link rel="stylesheet" href="assets/css/components-record.css" />
+    <link rel="stylesheet" href="assets/css/components-accordion.css" />
     <link rel="stylesheet" href="assets/css/about.css" />
     <link rel="icon" type="image/png" href="assets/img/icon.png" />
     <link rel="manifest" href="site.webmanifest" />
@@ -53,9 +56,9 @@
                             <div class="bio-section-header">興趣</div>
                             <div class="bio-section-body">
                                 <ul>
-                                    <li>資訊新知：在資訊的世界，總是會有讓人意想不到的事情發生</li>
-                                    <li>日本文化：輕小說、漫畫、動漫，實在是太好看了，大推『ユイカ』</li>
-                                    <li>收藏印章：做了不少身分，走過很多地方，還是想留下點紀錄</li>
+                                    <li><strong>資訊新知：</strong>在資訊的世界，總是會有讓人意想不到的事情發生</li>
+                                    <li><strong>日本文化：</strong>輕小說、漫畫、動漫，實在是太好看了，大推『ユイカ』</li>
+                                    <li><strong>收藏印章：</strong>做了不少身分，走過很多地方，還是想留下點紀錄</li>
                                 </ul>
                             </div>
                         </div>
@@ -64,44 +67,43 @@
                             <div class="bio-section-body">
                                 <div class="accordion" id="cert-accordion">
                                     <details class="acc-item">
-                                        <summary>資訊能力</summary>
-                                        <ul>
-                                            <li>大學程式設計檢定（CPE），臺灣程式設計競賽委員會
-                                                <ul>
-                                                    <li>專業級（4題），2024.04</li>
-                                                </ul>
+                                        <summary><span class="record-heading">資訊能力</span></summary>
+                                        <ul class="record-list">
+                                            <li class="record-item">
+                                                <h3>大學程式設計檢定（CPE）</h3>
+                                                <div class="record-meta-level">專業級（4題）．2024.04</div>
+                                                <div class="record-meta-period">臺灣程式設計競賽委員會</div>
                                             </li>
                                         </ul>
                                     </details>
                                     <details class="acc-item">
-                                        <summary>語言能力</summary>
-                                        <ul>
-                                            <li>培力英語能力檢定測驗，財團法人語言訓練測驗中心
-                                                <ul>
-                                                    <li>聽力：B1+／閱讀：B1，2025.06</li>
-                                                </ul>
+                                        <summary><span class="record-heading">語言能力</span></summary>
+                                        <ul class="record-list">
+                                            <li class="record-item">
+                                                <h3>培力英語能力檢定測驗</h3>
+                                                <div class="record-meta-level">聽力：B1+／閱讀：B1．2025.06</div>
+                                                <div class="record-meta-period">財團法人語言訓練測驗中心</div>
                                             </li>
-                                            <li>中小學生台語認證測驗，國立成功大學台灣語文測驗中心
-                                                <ul>
-                                                    <li>A2 初級，2017.07</li>
-                                                </ul>
+                                            <li class="record-item">
+                                                <h3>中小學生台語認證測驗</h3>
+                                                <div class="record-meta-level">A2 初級．2017.07</div>
+                                                <div class="record-meta-period">國立成功大學台灣語文測驗中心</div>
                                             </li>
                                         </ul>
                                     </details>
                                     <details class="acc-item">
-                                        <summary>數理能力</summary>
-                                        <ul>
-                                            <li><small style="font-size: .60;">
-                                                    American Mathematics Competitions（AMC），The Mathematical Association
-                                                    of American</small>
-                                                <ul>
-                                                    <li>AMC12A（88.5），2021.02</li>
-                                                </ul>
+                                        <summary><span class="record-heading">數理能力</span></summary>
+                                        <ul class="record-list">
+                                            <li class="record-item">
+                                                <h3>American Mathematics Competitions（AMC）</h3>
+                                                <div class="record-meta-level">AMC12A（88.5）．2021.02</div>
+                                                <div class="record-meta-period">The Mathematical Association
+                                                    of America</div>
                                             </li>
-                                            <li>全國高中數理能力檢定（APX），國立交通大學理學院
-                                                <ul>
-                                                    <li>生物科－中高級，2020.08</li>
-                                                </ul>
+                                            <li class="record-item">
+                                                <h3>全國高中數理能力檢定（APX）</h3>
+                                                <div class="record-meta-level">生物科－中高級．2020.08</div>
+                                                <div class="record-meta-period"> 國立交通大學理學院</div>
                                             </li>
                                         </ul>
                                     </details>

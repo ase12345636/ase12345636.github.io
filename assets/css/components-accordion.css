@@ -86,3 +86,22 @@
     outline: 2px solid var(--color-secondary);
     outline-offset: 2px;
 }
+
+/* Variant: accordion item styled like record-item (used on about certifications) */
+.acc-item.acc-record {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: .85rem .85rem .9rem;
+    background: transparent;
+}
+
+.acc-item.acc-record>summary {
+    padding: 0;
+    font-weight: 600;
+    margin: 0 0 .15rem;
+}
+
+.acc-item.acc-record[open] {
+    /* optional subtle background on open */
+    background: transparent;
+}
