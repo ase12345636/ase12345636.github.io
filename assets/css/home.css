@@ -70,3 +70,58 @@
 .name-strong {
     font-weight: 700;
 }
+
+/* Featured publications list on home */
+.featured-pubs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: feat;
+}
+
+.featured-pubs>li {
+    position: relative;
+    padding-left: 2.1rem;
+    margin: .9rem 0 1.1rem;
+}
+
+.featured-pubs>li:before {
+    counter-increment: feat;
+    content: counter(feat) ".";
+    position: absolute;
+    left: 0;
+    top: .15rem;
+    font-weight: 600;
+    font-size: .9rem;
+    color: #fff;
+    opacity: .85;
+}
+
+.featured-pubs .citation {
+    margin: 0;
+    font-size: .82rem;
+    line-height: 1.55;
+}
+
+.featured-pubs .pub-link {
+    display: inline-block;
+    margin-top: .35rem;
+    margin-right: .55rem;
+    font-size: .6rem;
+    letter-spacing: .5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: .28rem .55rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-soft-bg);
+    text-decoration: none;
+    color: #fff;
+    transition: var(--transition);
+}
+
+.featured-pubs .pub-link:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #222;
+}

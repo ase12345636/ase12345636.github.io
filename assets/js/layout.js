@@ -32,6 +32,14 @@
             }
         });
     }
+    function enhancePdfLinks() {
+        // Open certain document/media types in a new tab for better UX
+        document.querySelectorAll('a[href$=".pdf" i], a[href$=".wav" i]').forEach(a => {
+            a.setAttribute('target', '_blank');
+            // security + privacy
+            a.setAttribute('rel', 'noopener noreferrer');
+        });
+    }
     document.addEventListener('DOMContentLoaded', () => {
         const hRoot = document.getElementById('site-header');
         const fRoot = document.getElementById('site-footer');
@@ -40,5 +48,6 @@
         initNavInteractions();
         setActiveNav();
         ensureThemeColor();
+        enhancePdfLinks();
     });
 })();
