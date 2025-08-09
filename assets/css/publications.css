@@ -1,71 +1,25 @@
-/* Publications page additional styles */
-.record-heading {
-    font-size: 1.1rem;
-    margin: 1.6rem 0 .4rem;
-    font-family: var(--font-serif);
-    font-weight: 600;
-    letter-spacing: 0;
+/* Publications page specific adjustments (after shared components-record.css) */
+/* Provide a bit more vertical space above headings for visual separation */
+.record-group .record-heading {
+    margin-top: var(--record-heading-top);
 }
 
 .record-group:first-of-type .record-heading {
-    margin-top: .8rem;
+    margin-top: var(--record-heading-top-first);
 }
 
-.record-list.ordered {
-    counter-reset: pub;
-    list-style: none;
-    margin: 0 0 .8rem;
-    padding: 0;
+/* Use pub variant spacing defined in components-record via .pubs class */
+.record-group ol.record-list.ordered {
+    margin: 0 0 .6rem;
 }
 
-.record-list.ordered>.record-item {
-    position: relative;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: transparent;
-    padding: .9rem .9rem 1rem 2.2rem;
-    margin: 0 0 .7rem;
+.record-group ol.record-list.ordered:last-of-type {
+    margin-bottom: .6rem;
 }
 
-.record-list.ordered>.record-item:last-child {
-    margin-bottom: 0;
-}
-
-.record-list.ordered>.record-item:before {
-    counter-increment: pub;
-    content: counter(pub) ".";
-    position: absolute;
-    left: .85rem;
-    top: .9rem;
-    font-size: .75rem;
-    font-weight: 600;
-    color: var(--color-secondary);
-}
-
-.record-item h3 {
-    margin: 0 0 .2rem;
-    font-size: .95rem;
-    font-weight: 600;
-}
-
+/* Period meta slightly more bottom spacing for dense citation paragraphs */
 .record-meta-period {
-    font-size: .6rem;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    margin: 0 0 .35rem;
-    letter-spacing: 0;
-}
-
-.pub-ref {
-    margin: .25rem 0 0;
-    font-size: .8rem;
-    line-height: 1.5;
-}
-
-.citation {
-    margin: .15rem 0 0;
-    font-size: .8rem;
-    line-height: 1.5;
+    margin-bottom: .35rem;
 }
 
 /* Extra spacing before first link button under each citation */

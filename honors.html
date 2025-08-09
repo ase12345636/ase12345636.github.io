@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>張簡雲翔 | 榮譽與獎項</title>
-    <meta name="description" content="張簡雲翔 榮譽與獎項" />
+    <title>張簡雲翔 | 榮譽</title>
+    <meta name="description" content="張簡雲翔 榮譽" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -13,25 +13,166 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
-    <!-- honors.css merged into layout.css -->
+    <link rel="stylesheet" href="assets/css/components-record.css" />
+    <link rel="stylesheet" href="assets/css/components-accordion.css" />
+    <link rel="stylesheet" href="assets/css/education.css" />
+    <link rel="stylesheet" href="assets/css/honors-accordion.css" />
     <link rel="icon" type="image/png" href="assets/img/icon.png" />
     <link rel="manifest" href="site.webmanifest" />
 </head>
 
 <body>
     <div id="site-header"></div>
-
     <main>
         <section class="section">
             <div class="container">
-                <h1 class="section-title">榮譽與獎項</h1>
-                <p class="honors-hero">以下列出重要學術獎項、競賽成果與研究補助。請依實際情況調整年份與名稱。</p>
-                <!-- TODO: 新增實際榮譽/獎項 honor-card 列表 -->
+                <h1 class="section-title">榮譽</h1>
+                <section class="record-group" aria-label="資訊相關榮譽">
+                    <h2 class="record-heading">資訊相關</h2>
+                    <ol class="record-list ordered">
+                        <li class="record-item">
+                            <h3>2025TCGA電腦對局競賽 <strong>Dots and boxes銅牌</strong></h3>
+                            <div class="record-meta-level">國立臺中教育大學</div>
+                            <div class="record-meta-period">2025.05</div>
+                        </li>
+                        <li class="record-item">
+                            <h3>國立暨南國際大學科技學院學士班專題競賽 <strong>優等</strong></h3>
+                            <div class="record-meta-level">國立暨南國際大學科技學院</div>
+                            <div class="record-meta-period">2024.12</div>
+                        </li>
+                        <li class="record-item">
+                            <h3>第一屆毫米波雷達AI創意競賽 <strong>佳作</strong></h3>
+                            <div class="record-meta-level">國立臺灣師範大學跨域科技產業創新研究學院</div>
+                            <div class="record-meta-period">2024.11</div>
+                        </li>
+                        <li class="record-item">
+                            <h3>ICPC Asia Taiwan Online Programming Contest <strong>Honorable Mention</strong></h3>
+                            <div class="record-meta-level">ICPC</div>
+                            <div class="record-meta-period">2024.09</div>
+                        </li>
+                        <li class="record-item">
+                            <h3>113年度AIS3新型態暑期資安實務課程 <strong>情資運用與防禦組最佳專題</strong></h3>
+                            <div class="record-meta-level">ISIP計畫推動辦公室</div>
+                            <div class="record-meta-period">2024.08</div>
+                        </li>
+                        <li class="record-item">
+                            <h3>高雄市新莊高級中學109學年度資訊科能力競賽 <strong>第四名</strong></h3>
+                            <div class="record-meta-level">高雄市新莊高級中學</div>
+                            <div class="record-meta-period">2020.10</div>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="record-group" aria-label="藝文相關榮譽">
+                    <h2 class="record-heading">藝文相關</h2>
+                    <ol class="record-list ordered">
+                        <li class="record-item">
+                            <h3>全國高級中等學校小論文寫作比賽 <strong>二年級優等</strong></h3>
+                            <div class="record-meta-level">全國高級中等學校圖書館輔導團</div>
+                            <div class="record-meta-period">2020.05</div>
+                        </li>
+                        <li class="record-item">
+                            <h3>2013高雄內門文藝采風比賽 <strong>彩繪類國小3~4年級組佳作</strong></h3>
+                            <div class="record-meta-level">財團法人月慧山觀音禪院宗教菩提發展基金會</div>
+                            <div class="record-meta-period">2013.03</div>
+                        </li>
+                        <li class="record-item">
+                            <h3>高雄100兒童閱讀菁英獎甄選 <strong>成績表現優異</strong></h3>
+                            <div class="record-meta-level">財團法人名家文教基金會</div>
+                            <div class="record-meta-period">2011.05</div>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="record-group" aria-label="求學相關榮譽">
+                    <details class="acc-item">
+                        <summary>求學相關</summary>
+                        <div id="study-accordion" class="study-accordion">
+                            <details class="acc-item">
+                                <summary>高中</summary>
+                                <div class="acc-panel">
+                                    <ol class="record-list ordered">
+                                        <li class="record-item">
+                                            <h3>110級畢業勤學獎</h3>
+                                            <div class="record-meta-period">2021.06</div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                            <details class="acc-item">
+                                <summary>國中</summary>
+                                <div class="acc-panel">
+                                    <ol class="record-list ordered">
+                                        <li class="record-item">
+                                            <h3>107級畢業服務獎</h3>
+                                            <div class="record-meta-period">2018.06</div>
+                                        </li>
+                                        <li class="record-item">
+                                            <h3>105年度班級AQ達人</h3>
+                                            <div class="record-meta-period">2016.06</div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                            <details class="acc-item">
+                                <summary>國小</summary>
+                                <div class="acc-panel">
+                                    <ol class="record-list ordered">
+                                        <li class="record-item">
+                                            <h3>104級畢業家長會長獎</h3>
+                                            <div class="record-meta-period">2015.06</div>
+                                        </li>
+                                        <li class="record-item">
+                                            <h3>102學年度班級模範兒童</h3>
+                                            <div class="record-meta-period">2014.04</div>
+                                        </li>
+                                        <li class="record-item">
+                                            <h3>榮譽狀</h3>
+                                            <div class="record-meta-period">2014.01</div>
+                                        </li>
+                                        <li class="record-item">
+                                            <h3>MQ達人</h3>
+                                            <div class="record-meta-period">2013.04</div>
+                                        </li>
+                                        <li class="record-item">
+                                            <h3>110學年度第一學期進步獎</h3>
+                                            <div class="record-meta-period">2012.01</div>
+                                        </li>
+                                        <li class="record-item">
+                                            <h3>書香小學士</h3>
+                                            <div class="record-meta-period">2011.06</div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                            <details class="acc-item">
+                                <summary>幼稚園</summary>
+                                <div class="acc-panel">
+                                    <ol class="record-list ordered">
+                                        <li class="record-item">
+                                            <h3>群育獎</h3>
+                                            <div class="record-meta-period">2009.01</div>
+                                        </li>
+                                        <li class="record-item">
+                                            <h3>語文獎</h3>
+                                            <div class="record-meta-period">2008.08</div>
+                                        </li>
+                                        <li class="record-item">
+                                            <h3>學習獎</h3>
+                                            <div class="record-meta-period">2008.02</div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+                </section>
             </div>
         </section>
     </main>
     <div id="site-footer"></div>
     <script src="assets/js/layout.js"></script>
+    <script src="assets/js/honors-accordion.js"></script>
 </body>
 
 </html>

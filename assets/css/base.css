@@ -78,53 +78,53 @@ button:focus-visible,
     width: 1px;
     height: 1px;
     padding: 0;
-
-    .mt-0 {
-        margin-top: 0 !important
-    }
-
-    .mb-0 {
-        margin-bottom: 0 !important
-    }
-
-    .mt-sm {
-        margin-top: .5rem !important
-    }
-
-    .mb-sm {
-        margin-bottom: .5rem !important
-    }
-
-    .mt-md {
-        margin-top: 1rem !important
-    }
-
-    .mb-md {
-        margin-bottom: 1rem !important
-    }
-
-    .text-small {
-        font-size: .8rem !important
-    }
-
-    .text-muted {
-        color: var(--color-muted) !important
-    }
-
-    .list-tight {
-        margin: .4rem 0 .2rem 1.1rem !important
-    }
-
-    .list-tight li {
-        margin-bottom: .25rem
-    }
-
     margin: -1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
+}
+
+/* Utility spacing & text helpers (were incorrectly nested inside .visually-hidden) */
+.mt-0 {
+    margin-top: 0 !important
+}
+
+.mb-0 {
+    margin-bottom: 0 !important
+}
+
+.mt-sm {
+    margin-top: .5rem !important
+}
+
+.mb-sm {
+    margin-bottom: .5rem !important
+}
+
+.mt-md {
+    margin-top: 1rem !important
+}
+
+.mb-md {
+    margin-bottom: 1rem !important
+}
+
+.text-small {
+    font-size: .8rem !important
+}
+
+.text-muted {
+    color: var(--color-muted) !important
+}
+
+.list-tight {
+    margin: .4rem 0 .2rem 1.1rem !important
+}
+
+.list-tight li {
+    margin-bottom: .25rem
 }
 
 h1,

@@ -6,26 +6,16 @@
     color: var(--color-muted);
 }
 
-/* Unified record headings */
-.record-heading {
-    font-size: 1.14rem;
-    margin: 1.2rem 0 .35rem;
-    font-family: var(--font-serif);
-    font-weight: 600;
-    letter-spacing: 0;
-}
-
+/* Record spacing adjustments unique to experience page */
 .record-group {
     margin: 0 0 .6rem;
-}
-
-.record-group:first-of-type .record-heading {
-    margin-top: .6rem;
 }
 
 .record-group:last-of-type {
     margin-bottom: 0;
 }
+
+/* First heading margin now controlled by components-record.css vars */
 
 /* 保留舊樣式備份 (如需回退) */
 /*
@@ -43,66 +33,38 @@
     margin-bottom: .25rem;
 }
 
-/* Ordered list styles (card pattern) */
+/* Slightly tighter overall ordered list spacing vs default */
 .record-list.ordered {
-    counter-reset: record;
-    list-style: none;
-    margin: 0 0 .4rem;
-    padding: 0;
+    margin: 0 0 .45rem;
 }
 
-.record-item {
-    position: relative;
-    background: transparent;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: .65rem .7rem .7rem 2rem;
-    margin: 0 0 .4rem;
+.record-list.ordered>.record-item {
+    margin: 0 0 .45rem;
+    padding: .7rem .75rem .75rem var(--record-ol-indent);
 }
 
-.record-item:last-child {
+.record-list.ordered>.record-item:last-child {
     margin-bottom: 0;
 }
 
 .record-list.ordered>.record-item:before {
-    counter-increment: record;
-    content: counter(record) ".";
-    position: absolute;
-    left: .65rem;
+    left: var(--record-ol-num-left);
     top: .65rem;
-    font-weight: 600;
-    font-size: .75rem;
-    color: var(--color-secondary);
-    letter-spacing: 0;
 }
 
 .record-item h3 {
     margin: 0 0 .15rem;
-    font-size: .95rem;
-    font-weight: 600;
 }
 
-.record-meta-period {
-    font-size: .6rem;
-    letter-spacing: 0;
-    color: var(--color-muted);
-    text-transform: uppercase;
-    margin-bottom: .25rem;
-}
+/* record-meta-period already defined globally */
 
+/* record-points uses shared styling; adjust spacing slightly */
 .record-points {
     margin: .25rem 0 0 1rem;
-    padding: 0;
-    font-size: .8rem;
-    line-height: 1.45;
 }
 
 .record-points li {
     margin-bottom: .18rem;
-}
-
-.record-points li:last-child {
-    margin-bottom: 0;
 }
 
 .exp-note {

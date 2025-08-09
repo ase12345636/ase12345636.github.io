@@ -1,0 +1,159 @@
+/* Shared record component styles (unified across education / experience / honors / publications)
+   - Provides consistent heading, list, item, meta styling
+   - Page specific files may extend or lightly override spacing if needed */
+
+/* Variables for record system */
+:root {
+    --record-heading-size: 1.14rem;
+    --record-heading-top: 1rem;
+    /* non-first group top margin */
+    --record-heading-top-first: .4rem;
+    /* first group tighter */
+    --record-heading-bottom: .3rem;
+    --record-item-gap: .55rem;
+    --record-item-pad-y: .8rem;
+    --record-item-pad-x: .85rem;
+    --record-ol-indent: 1.9rem;
+    --record-ol-num-left: .7rem;
+    --record-ol-num-top: .72rem;
+}
+
+/* Headings inside grouped record sections */
+.record-heading {
+    font-size: var(--record-heading-size);
+    margin: var(--record-heading-top) 0 var(--record-heading-bottom);
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* First group override */
+.record-group:first-of-type .record-heading {
+    margin-top: var(--record-heading-top-first);
+}
+
+/* Generic ordered/ unordered list reset for records */
+.record-list {
+    list-style: none;
+    margin: 0 0 .6rem;
+    padding: 0;
+}
+
+.record-list:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Ordered version with custom counter */
+.record-list.ordered {
+    counter-reset: item;
+    /* single counter name reused */
+}
+
+/* Base record item (applies to ordered & unordered lists) */
+.record-item {
+    position: relative;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: .85rem .85rem .9rem;
+    /* default (no number) */
+    margin: 0 0 .55rem;
+}
+
+.record-item:last-child {
+    margin-bottom: 0;
+}
+
+.record-list.ordered>.record-item {
+    padding: var(--record-item-pad-y) var(--record-item-pad-x) calc(var(--record-item-pad-y) + .05rem) var(--record-ol-indent);
+}
+
+.record-list.ordered>.record-item:last-child {
+    margin-bottom: 0;
+}
+
+.record-list.ordered>.record-item:before {
+    counter-increment: item;
+    content: counter(item) ".";
+    position: absolute;
+    left: var(--record-ol-num-left);
+    top: var(--record-ol-num-top);
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+
+/* Shared title inside item */
+.record-item h3 {
+    margin: 0 0 .18rem;
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+/* Meta variants */
+.record-meta-level {
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    letter-spacing: .4px;
+    margin-bottom: .2rem;
+}
+
+.record-meta-period {
+    font-size: .6rem;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    letter-spacing: 0;
+    margin-bottom: .25rem;
+}
+
+/* Additional text block inside record */
+.record-item p {
+    margin: .35rem 0 0;
+    font-size: .8rem;
+    line-height: 1.5;
+}
+
+/* Utility tighter list inside a record */
+.record-points,
+.record-item .tight-points {
+    margin: .3rem 0 0 1rem;
+    padding: 0;
+    font-size: .8rem;
+    line-height: 1.45;
+}
+
+.record-points li {
+    margin: 0 0 .2rem;
+}
+
+.record-points li:last-child {
+    margin-bottom: 0;
+}
+
+/* Publication citation layout (applies when element has .citation) */
+.citation {
+    font-size: .8rem;
+    line-height: 1.5;
+    margin: .15rem 0 0;
+}
+
+/* Variant: more spacious publication list (opt-in class) */
+.record-list.pubs>.record-item {
+    padding: .9rem .9rem 1rem 2.2rem;
+    margin: 0 0 .7rem;
+}
+
+.record-list.pubs>.record-item:before {
+    left: .85rem;
+    top: .9rem;
+}
+
+/* Strong emphasis unify including English */
+.record-item strong,
+.citation strong {
+    font-weight: 700;
+    font-family: 'Noto Sans TC', var(--font-sans, sans-serif);
+    letter-spacing: .3px;
+}

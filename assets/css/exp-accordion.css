@@ -1,0 +1,24 @@
+/* Experience page accordion specific spacing (after shared components-accordion.css) */
+#exp-accordion {
+    margin-top: .5rem;
+}
+
+#exp-accordion .acc-item {
+    margin: 0 0 .45rem;
+}
+
+#exp-accordion .acc-item:last-child {
+    margin-bottom: 0;
+}
+
+#exp-accordion .acc-item>summary::after {
+    font-size: 1.1rem;
+}
+
+#exp-accordion .acc-item>summary .record-heading {
+    margin: .1rem 0;
+}
+
+#exp-accordion .record-list.ordered {
+    margin: .45rem 0 0;
+}

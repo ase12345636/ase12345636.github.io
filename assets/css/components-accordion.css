@@ -1,0 +1,88 @@
+/* Shared accordion styles for details/summary based accordions */
+
+/* Variables */
+:root {
+    --acc-gap: .6rem;
+    --acc-gap-tight: .45rem;
+    --acc-gap-nested: .55rem;
+}
+
+/* Base accordion item */
+.acc-item {
+    margin: 0 0 var(--acc-gap);
+}
+
+.acc-item:last-child {
+    margin-bottom: 0;
+}
+
+.acc-item>summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    font-weight: 500;
+    font-size: .95rem;
+    /* default summary text size */
+    outline: none;
+    padding: .15rem 0;
+}
+
+.acc-item>summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Plus / minus icon to right */
+.acc-item>summary::after {
+    content: '+';
+    margin-left: auto;
+    font-size: 1.1rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.acc-item[open]>summary::after {
+    content: '-';
+}
+
+/* Record heading placed inside summary should have minimal margin */
+.acc-item>summary .record-heading {
+    margin: .1rem 0;
+    font-size: 1.14rem;
+}
+
+/* Panel spacing when content expands (lists typically follow) */
+.acc-item>.acc-panel,
+.acc-item>ol,
+.acc-item>ul {
+    margin-top: .55rem;
+}
+
+/* Tight variant (experience page) */
+.acc-tight .acc-item {
+    margin: 0 0 var(--acc-gap-tight);
+}
+
+.acc-tight .acc-item>summary {
+    padding: 0;
+}
+
+/* Study (nested) smaller summaries variant */
+.acc-sm .acc-item {
+    margin: 0 0 var(--acc-gap-nested);
+}
+
+.acc-sm .acc-item>summary {
+    font-size: .9rem;
+}
+
+.acc-sm .acc-item>summary::after {
+    font-size: 1.0rem;
+}
+
+/* Accessibility focus visible */
+.acc-item>summary:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}

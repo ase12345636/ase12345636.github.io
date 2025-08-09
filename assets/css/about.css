@@ -137,6 +137,25 @@
     margin-bottom: 0;
 }
 
+/* Remove horizontal lines for 資訊能力 / 語言能力 / 數理能力 & tighten vertical spacing */
+#cert-accordion details {
+    border-bottom: none;
+    padding-bottom: .4rem;
+    /* even tighter internal space */
+    margin: 0 0 .55rem;
+    /* closer gap */
+}
+
+#cert-accordion details:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Further reduce list offset after summary */
+#cert-accordion details>ul {
+    margin: .35rem 0 0 1.02rem;
+}
+
 @media (max-width:760px) {
     .profile-grid {
         grid-template-columns: 1fr;
