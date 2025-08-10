@@ -1,7 +1,26 @@
 // Unified header & footer injection + navigation behavior (active link, a11y)
 (function () {
     'use strict';
-    const headerHTML = `\n<header class="header">\n  <div class="container navbar">\n    <a class="brand" href="index.html">\n      <img src="assets/img/memu.jpg" alt="Profile" loading="lazy" />\n      <span class="brand-name">張簡雲翔</span>\n    </a>\n    <button class="nav-toggle" aria-label="切換選單" aria-expanded="false"><span></span></button>\n    <div class="nav-menu-wrapper">\n      <ul class="nav-menu">\n        <li><a href="index.html">首頁</a></li>\n        <li><a href="about.html">簡介</a></li>\n        <li><a href="education.html">學歷</a></li>\n        <li><a href="experience.html">經歷</a></li>\n        <li><a href="publications.html">著作</a></li>\n        <li><a href="honors.html">榮譽</a></li>\n      </ul>\n    </div>\n  </div>\n</header>`;
+    function buildHeader() {
+        const path = location.pathname.replace(/\\\\/g, '/');
+        const isEnglish = /\/en\//.test(path);
+        const base = isEnglish ? '../' : '';
+        // language config (extendable)
+        const languages = [
+            { code: 'zh-Hant', name: '中文', label: '中文', basePath: `${isEnglish ? '../' : ''}`, index: 'index.html', current: !isEnglish },
+            { code: 'en', name: 'English', label: 'English', basePath: `${isEnglish ? '../' : ''}en/`, index: 'index.html', current: isEnglish }
+        ];
+        const langLabel = isEnglish ? 'Language' : '語言';
+        const langDropdown = `<li class="nav-lang"><details><summary>${langLabel}</summary><ul class="lang-dropdown">${languages.map(l => `<li><a class="lang-link${l.current ? ' active-lang' : ''}" hreflang="${l.code}" href="${l.basePath}${l.index}">${l.name}</a></li>`).join('')}</ul></details></li>`;
+        return `\n<header class="header">\n  <div class="container navbar">\n    <a class="brand" href="${base}index.html">\n      <img src="${base}assets/img/memu.jpg" alt="Profile" loading="lazy" />\n      <span class="brand-name">張簡雲翔</span>\n    </a>\n    <button class="nav-toggle" aria-label="切換選單" aria-expanded="false"><span></span></button>\n    <div class="nav-menu-wrapper">\n      <ul class="nav-menu">\n        ${isEnglish ? `<li><a href="${base}en/index.html">Home</a></li>` : `<li><a href="${base}index.html">首頁</a></li>`}
+        ${isEnglish ? `<li><a href="${base}en/about.html">About</a></li>` : `<li><a href="${base}about.html">簡介</a></li>`}
+        ${isEnglish ? `<li><a href="${base}en/education.html">Education</a></li>` : `<li><a href="${base}education.html">學歷</a></li>`}
+        ${isEnglish ? `<li><a href="${base}en/experience.html">Experience</a></li>` : `<li><a href="${base}experience.html">經歷</a></li>`}
+        ${isEnglish ? `<li><a href="${base}en/publications.html">Publications</a></li>` : `<li><a href="${base}publications.html">著作</a></li>`}
+        ${isEnglish ? `<li><a href="${base}en/honors.html">Honors</a></li>` : `<li><a href="${base}honors.html">榮譽</a></li>`}
+        ${langDropdown}\n      </ul>\n    </div>\n  </div>\n</header>`;
+    }
+    const headerHTML = buildHeader();
     const footerHTML = (() => { const y = new Date().getFullYear(); return `\n<footer aria-label="頁尾"><div class="container"><div>Copyright © ${y} 張簡雲翔</div></div></footer>`; })();
 
     function ensureThemeColor() {
@@ -12,10 +31,13 @@
         document.head.appendChild(meta);
     }
     function setActiveNav() {
-        const path = location.pathname.split('/').pop() || 'index.html';
+        const full = location.pathname.replace(/\\\\/g, '/');
+        const file = full.endsWith('/') ? 'index.html' : full.split('/').pop();
         document.querySelectorAll('.nav-menu a').forEach(a => {
             const href = a.getAttribute('href');
-            if (href === path || (path === '' && href === 'index.html')) a.classList.add('active');
+            // Compare by filename only to allow '../' or 'en/' prefixes
+            const target = href.split('/').pop();
+            if (target === file) a.classList.add('active');
         });
     }
     function initNavInteractions() {
