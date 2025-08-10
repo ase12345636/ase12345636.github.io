@@ -10,8 +10,9 @@
             { code: 'zh-Hant', name: '中文', label: '中文', basePath: `${isEnglish ? '../' : ''}`, index: 'index.html', current: !isEnglish },
             { code: 'en', name: 'English', label: 'English', basePath: `${isEnglish ? '../' : ''}en/`, index: 'index.html', current: isEnglish }
         ];
-        const langLabel = isEnglish ? 'Language' : '語言';
-        const langDropdown = `<li class="nav-lang"><details><summary>${langLabel}</summary><ul class="lang-dropdown">${languages.map(l => `<li><a class="lang-link${l.current ? ' active-lang' : ''}" hreflang="${l.code}" href="${l.basePath}${l.index}">${l.name}</a></li>`).join('')}</ul></details></li>`;
+        // Always show unified label 'Language' regardless of current page language
+        const langLabel = 'Language';
+        const langDropdown = `<li class=\"nav-lang\"><details><summary><span class=\"lang-label\">${langLabel}</span></summary><ul class=\"lang-dropdown\">${languages.map(l => `<li><a class=\"lang-link${l.current ? ' active-lang' : ''}\" hreflang=\"${l.code}\" href=\"${l.basePath}${l.index}\">${l.name}</a></li>`).join('')}</ul></details></li>`;
         return `\n<header class="header">\n  <div class="container navbar">\n    <a class="brand" href="${base}index.html">\n      <img src="${base}assets/img/memu.jpg" alt="Profile" loading="lazy" />\n      <span class="brand-name">張簡雲翔</span>\n    </a>\n    <button class="nav-toggle" aria-label="切換選單" aria-expanded="false"><span></span></button>\n    <div class="nav-menu-wrapper">\n      <ul class="nav-menu">\n        ${isEnglish ? `<li><a href="${base}en/index.html">Home</a></li>` : `<li><a href="${base}index.html">首頁</a></li>`}
         ${isEnglish ? `<li><a href="${base}en/about.html">About</a></li>` : `<li><a href="${base}about.html">簡介</a></li>`}
         ${isEnglish ? `<li><a href="${base}en/education.html">Education</a></li>` : `<li><a href="${base}education.html">學歷</a></li>`}

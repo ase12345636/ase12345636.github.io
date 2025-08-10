@@ -140,6 +140,11 @@
     font-weight: 500;
 }
 
+.nav-lang summary .lang-label {
+    transition: opacity .35s ease;
+    display: inline-block;
+}
+
 .nav-lang summary::-webkit-details-marker {
     display: none;
 }
