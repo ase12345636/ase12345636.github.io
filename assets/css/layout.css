@@ -179,16 +179,17 @@
     text-decoration: none;
 }
 
-.lang-dropdown a:hover,
-.lang-dropdown a.active-lang {
-    background: var(--color-secondary);
-    color: #fff;
-}
-
 .lang-dropdown a.active-lang {
     background: transparent;
     color: var(--color-secondary);
     font-weight: 600;
+}
+
+/* Hover: show underline only (no background) */
+.lang-dropdown a:hover {
+    background: transparent;
+    color: inherit;
+    text-decoration: underline;
 }
 
 .nav-lang summary {
