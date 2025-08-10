@@ -11,8 +11,9 @@
     margin-bottom: 0;
 }
 
+/* Use unified icon size (see components-accordion.css) */
 #exp-accordion .acc-item>summary::after {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 #exp-accordion .acc-item>summary .record-heading {

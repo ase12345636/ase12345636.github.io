@@ -34,10 +34,12 @@
 }
 
 /* Plus / minus icon to right */
+/* Unified plus/minus icon sizing */
 .acc-item>summary::after {
     content: '+';
     margin-left: auto;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    /* unified size */
     line-height: 1;
     font-weight: 600;
 }
@@ -77,8 +79,9 @@
     font-size: .9rem;
 }
 
+/* Remove size difference for nested small variant so all icons match */
 .acc-sm .acc-item>summary::after {
-    font-size: 1.0rem;
+    font-size: 1.05rem;
 }
 
 /* Accessibility focus visible */

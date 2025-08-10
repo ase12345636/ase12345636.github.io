@@ -110,8 +110,8 @@
 .accordion summary::after {
     content: '+';
     margin-left: auto;
-    font-size: 1.25rem;
-    /* 放大符號 */
+    font-size: 1.05rem;
+    /* 統一符號大小 */
     line-height: 1;
     transition: color .2s;
 }
