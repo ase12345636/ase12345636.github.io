@@ -87,13 +87,14 @@
 .record-item h3 {
     margin: 0 0 .18rem;
     font-size: .95rem;
-    font-weight: 600;
+    font-weight: 400;
+    /* normal weight */
 }
 
 /* Meta variants */
 .record-meta-level {
     font-size: .7rem;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     color: var(--color-secondary);
     letter-spacing: .4px;
@@ -153,7 +154,8 @@
 /* Strong emphasis unify including English */
 .record-item strong,
 .citation strong {
-    font-weight: 700;
+    font-weight: 600;
+    /* lighter emphasis */
     font-family: var(--font-sans);
     letter-spacing: .3px;
 }
@@ -164,18 +166,14 @@ body[data-page="honors"] .record-item strong,
 body[data-page="honors"] .citation strong,
 body[data-page="publications"] .record-item strong,
 body[data-page="publications"] .citation strong {
-    /* User preference: no background, pure white text, stronger weight */
     color: var(--color-secondary);
-    font-weight: 700;
-    /* maximum loaded weight */
-    letter-spacing: .5px;
+    font-weight: 600;
+    letter-spacing: .4px;
 }
 
 /* Honors only: pseudo bold outline (偽粗描邊) to增強視覺重量 */
 body[data-page="honors"] .record-item strong,
 body[data-page="honors"] .citation strong {
-    /* Thicker light stroke (option A) */
-    -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.55);
-    /* Adjust fallback shadows proportionally */
-    text-shadow: 0 0 0.8px rgba(255, 255, 255, 0.55), 0 0 1.2px rgba(255, 255, 255, 0.25);
+    -webkit-text-stroke: 0;
+    text-shadow: none;
 }

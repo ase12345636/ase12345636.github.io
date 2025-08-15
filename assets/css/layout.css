@@ -106,6 +106,7 @@
     display: inline-block;
     padding: .55rem .2rem;
     font-size: .9rem;
+    /* Restore medium weight for better navigation prominence */
     font-weight: 500;
     color: inherit;
     position: relative;
@@ -138,6 +139,7 @@
     padding: .55rem .2rem;
     font-size: .9rem;
     font-weight: 500;
+    /* restore medium weight */
 }
 
 .nav-lang summary .lang-label {
@@ -183,6 +185,8 @@
     background: transparent;
     color: var(--color-secondary);
     font-weight: 600;
+    /* emphasize current language */
+    text-decoration: none;
 }
 
 /* Hover: show underline only (no background) */
