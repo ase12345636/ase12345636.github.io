@@ -98,7 +98,6 @@
     text-transform: uppercase;
     color: var(--color-secondary);
     letter-spacing: .4px;
-    margin-bottom: .2rem;
 }
 
 .record-meta-period {
@@ -107,6 +106,13 @@
     color: var(--color-muted);
     letter-spacing: 0;
     margin-bottom: .25rem;
+}
+
+.record-meta-advisor {
+    font-size: .6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-secondary);
 }
 
 /* Additional text block inside record */
