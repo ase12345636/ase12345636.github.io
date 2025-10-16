@@ -45,7 +45,7 @@
     flex: 1 1 0;
     text-align: center;
     /* Make text responsive but allow smaller min size to avoid overflow */
-    font-size: clamp(.3rem, .6vw, .7rem);
+    font-size: clamp(.65rem, .6vw, .7rem);
     letter-spacing: .5px;
     font-weight: 600;
     text-transform: uppercase;
