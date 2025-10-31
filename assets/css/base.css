@@ -1,18 +1,12 @@
-/* Base (reset + variables + utilities) */
 :root {
-    /* Unified Chinese / English font stack (Noto Sans TC includes Latin glyphs) */
-    /* Try self-hosted local family name first (defined in fonts.css), fallback to Google-served family if files missing */
-    --font-sans: 'Times New Roman', 'kaiu', 'Noto Sans TC';
-    /* Serif no longer separate – point to same unified family to keep existing var references working */
+    --font-sans: 'Times New Roman', 'kaiu';
     --font-serif: var(--font-sans);
-    /* Light (default) */
     --color-bg: #0e1116;
     --color-surface: #1a1f27;
     --color-surface-alt: #222a35;
     --color-primary: #4ea1ff;
     --color-primary-accent: #7bbdff;
     --color-secondary: #ffffff;
-    /* updated from #ff6b91 to white */
     --color-text: #e6e9ef;
     --color-text-invert: #0e1116;
     --color-muted: #bfc6cf;
@@ -24,7 +18,6 @@
     --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.55);
     --max-width: 980px;
     --transition: .25s cubic-bezier(.4, 0, .2, 1);
-    /* Spacing scale */
     --space-2xs: .15rem;
     --space-xs: .25rem;
     --space-sm: .4rem;
