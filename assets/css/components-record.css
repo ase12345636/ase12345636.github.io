@@ -136,14 +136,12 @@
     margin-bottom: 0;
 }
 
-/* Publication citation layout (applies when element has .citation) */
 .citation {
     font-size: .8rem;
     line-height: 1.5;
     margin: .15rem 0 0;
 }
 
-/* Variant: more spacious publication list (opt-in class) */
 .record-list.pubs>.record-item {
     padding: .9rem .9rem 1rem 2.2rem;
     margin: 0 0 .7rem;
@@ -154,29 +152,9 @@
     top: .9rem;
 }
 
-/* Strong emphasis unify including English */
 .record-item strong,
 .citation strong {
-    font-weight: 600;
-    /* lighter emphasis */
+    font-weight: 700;
     font-family: var(--font-sans);
     letter-spacing: .3px;
-}
-
-/* Stronger visual emphasis only on honors & publications pages */
-/* Enhanced emphasis: only bold + color (no background) on honors & publications */
-body[data-page="honors"] .record-item strong,
-body[data-page="honors"] .citation strong,
-body[data-page="publications"] .record-item strong,
-body[data-page="publications"] .citation strong {
-    color: var(--color-secondary);
-    font-weight: 600;
-    letter-spacing: .4px;
-}
-
-/* Honors only: pseudo bold outline (偽粗描邊) to增強視覺重量 */
-body[data-page="honors"] .record-item strong,
-body[data-page="honors"] .citation strong {
-    -webkit-text-stroke: 0;
-    text-shadow: none;
 }

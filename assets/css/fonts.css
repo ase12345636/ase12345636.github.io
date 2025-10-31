@@ -17,7 +17,7 @@
 @font-face {
     font-family: 'Times New Roman';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-display: swap;
-    src: url('../fonts/times-700.ttf') format('truetype');
+    src: url('../fonts/times-500.ttf') format('truetype');
 }

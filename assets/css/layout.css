@@ -105,9 +105,8 @@
 .nav-menu a {
     display: inline-block;
     padding: .55rem .2rem;
-    font-size: .9rem;
-    /* Restore medium weight for better navigation prominence */
-    font-weight: 500;
+    font-size: .95rem;
+    font-weight: 600;
     color: inherit;
     position: relative;
 }
@@ -138,8 +137,8 @@
     cursor: pointer;
     padding: .55rem .2rem;
     font-size: .9rem;
-    font-weight: 500;
-    /* restore medium weight */
+    /* keep language label consistent with nav weight */
+    font-weight: 600;
 }
 
 .nav-lang summary .lang-label {
