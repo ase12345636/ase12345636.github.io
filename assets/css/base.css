@@ -2,7 +2,7 @@
 :root {
     /* Unified Chinese / English font stack (Noto Sans TC includes Latin glyphs) */
     /* Try self-hosted local family name first (defined in fonts.css), fallback to Google-served family if files missing */
-    --font-sans: 'Noto Sans TC Local', 'Noto Sans TC', 'Noto Sans', 'Segoe UI', Roboto, Helvetica, Arial, system-ui, sans-serif;
+    --font-sans: 'Times New Roman', 'kaiu', 'Noto Sans TC';
     /* Serif no longer separate – point to same unified family to keep existing var references working */
     --font-serif: var(--font-sans);
     /* Light (default) */

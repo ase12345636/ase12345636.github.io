@@ -1,27 +1,15 @@
-/* Local self-hosted Noto Sans TC (TTF only as requested) */
-/* Place NotoSansTC-400.ttf, NotoSansTC-500.ttf, NotoSansTC-700.ttf in assets/fonts */
-/* Note: TTF 檔案較大，若要最佳化載入速度可考慮轉成 WOFF2 */
-
 @font-face {
-    font-family: 'Noto Sans TC Local';
+    font-family: 'kaiu';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../fonts/NotoSansTC-400.ttf') format('truetype');
+    src: url('../fonts/kaiu.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Noto Sans TC Local';
+    font-family: 'Times New Roman';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-display: swap;
-    src: url('../fonts/NotoSansTC-500.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Noto Sans TC Local';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('../fonts/NotoSansTC-700.ttf') format('truetype');
+    src: url('../fonts/times-400.ttf') format('truetype');
 }
