@@ -1,5 +1,6 @@
 :root {
-    --font-sans: 'Times New Roman', 'kaiu';
+    /* Default to system/local serif stack to avoid webfont swap flicker */
+    --font-sans: 'TimesNRWeb', 'KaiUWeb';
     --font-serif: var(--font-sans);
     --color-bg: #0e1116;
     --color-surface: #1a1f27;
@@ -347,4 +348,8 @@ footer a {
     .section {
         padding: 2.4rem 0 2.8rem;
     }
+}
+
+html.fonts-loaded {
+    --font-sans: 'TimesNRWeb', 'KaiUWeb', serif;
 }

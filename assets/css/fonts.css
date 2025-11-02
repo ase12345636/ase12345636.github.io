@@ -1,23 +1,23 @@
 @font-face {
-    font-family: 'kaiu';
+    font-family: 'KaiUWeb';
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
+    font-display: fallback;
     src: url('../fonts/kaiu.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Times New Roman';
+    font-family: 'TimesNRWeb';
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
+    font-display: fallback;
     src: url('../fonts/times-400.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Times New Roman';
+    font-family: 'TimesNRWeb';
     font-style: normal;
     font-weight: 500;
-    font-display: swap;
+    font-display: fallback;
     src: url('../fonts/times-500.ttf') format('truetype');
 }

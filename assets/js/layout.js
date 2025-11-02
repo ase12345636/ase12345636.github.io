@@ -1,4 +1,3 @@
-// Unified header & footer injection + navigation behavior (active link, a11y)
 (function () {
     'use strict';
     function buildHeader() {
