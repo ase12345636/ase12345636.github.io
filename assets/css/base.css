@@ -1,5 +1,5 @@
 :root {
-    --font-sans: 'TimesNRWeb', 'KaiUWeb';
+    --font-sans: 'TimesNRWeb', 'KaiUWeb', 'MSMinchoWeb';
     --font-serif: var(--font-sans);
     --color-bg: #0e1116;
     --color-surface: #1a1f27;

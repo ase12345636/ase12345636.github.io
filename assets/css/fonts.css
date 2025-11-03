@@ -3,7 +3,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: block;
-    src: url('../fonts/kaiu.woff2') format('woff2');
+    src: url('../fonts/KaiU.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: block;
-    src: url('../fonts/times-400.woff2') format('woff2');
+    src: url('../fonts/TimesNR-400.woff2') format('woff2');
 }
 
 @font-face {
@@ -19,5 +19,13 @@
     font-style: normal;
     font-weight: 500;
     font-display: block;
-    src: url('../fonts/times-500.woff2') format('woff2');
+    src: url('../fonts/TimesNR-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'MSMinchoWeb';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('../fonts/MSMincho.woff2') format('woff2');
 }
