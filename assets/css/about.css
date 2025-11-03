@@ -151,7 +151,6 @@
     margin-bottom: 0;
 }
 
-/* Further reduce list offset after summary */
 #cert-accordion details>ul {
     margin: .35rem 0 0 1.02rem;
 }

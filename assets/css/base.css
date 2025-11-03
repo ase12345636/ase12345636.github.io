@@ -318,6 +318,10 @@ ol {
     border-radius: 2px;
 }
 
+.japanese {
+    font-family: "MSMinchoWeb";
+}
+
 footer {
     padding: 2.4rem 0 3rem;
     font-size: .875rem;
