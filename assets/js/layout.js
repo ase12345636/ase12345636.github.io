@@ -8,7 +8,7 @@
             { code: 'zh-Hant', name: '中文', basePath: `${base}`, index: 'index.html', current: !isEnglish },
             { code: 'en', name: 'English', basePath: `${base}en/`, index: 'index.html', current: isEnglish }
         ];
-        const langDropdown = `<li class="nav-lang"><details><summary><span class="lang-label">Language</span></summary><ul class="lang-dropdown">${languages.map(l => `<li><a class="lang-link${l.current ? ' active-lang' : ''}" hreflang="${l.code}" href="${l.basePath}${l.index}">${l.name}</a></li>`).join('')}</ul></details></li>`;
+        const langDropdown = `<li class="nav-lang"><details><summary><span class="lang-label">Language</span></summary><ul class="lang-dropdown">${languages.map(l => `<li><a class="lang-link${l.current ? ' active-lang' : ''}" hreflang="${l.code}" lang="${l.code}" href="${l.basePath}${l.index}">${l.name}</a></li>`).join('')}</ul></details></li>`;
         const brandHref = isEnglish ? `${base}en/index.html` : `${base}index.html`;
         const labels = isEnglish
             ? { home: 'Home', about: 'About', edu: 'Education', exp: 'Experience', pubs: 'Publication', honors: 'Honor', toggle: 'Toggle menu' }
@@ -60,6 +60,57 @@
             a.setAttribute('rel', 'noopener noreferrer');
         });
     }
+    function initGlobalDismiss() {
+        const toggle = document.querySelector('.nav-toggle');
+        const menuWrapper = document.querySelector('.nav-menu-wrapper');
+        const getLangDetails = () => document.querySelector('.nav-lang details');
+        // Close language dropdown and mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            const langDetails = getLangDetails();
+            if (langDetails && langDetails.open && !langDetails.contains(target)) {
+                langDetails.open = false;
+            }
+            if (document.body.classList.contains('nav-open')) {
+                const clickedInsideMenu = menuWrapper && menuWrapper.contains(target);
+                const clickedToggle = toggle && (toggle === target || toggle.contains(target));
+                if (!clickedInsideMenu && !clickedToggle) {
+                    document.body.classList.remove('nav-open');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+        // ESC to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                const langDetails = getLangDetails();
+                if (langDetails && langDetails.open) langDetails.open = false;
+                if (document.body.classList.contains('nav-open')) {
+                    document.body.classList.remove('nav-open');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    }
+    function initBackToTop() {
+        if (document.getElementById('back-to-top')) return;
+        const isEnglish = /\/en\//.test(location.pathname.replace(/\\/g, '/'));
+        const btn = document.createElement('button');
+        btn.id = 'back-to-top';
+        btn.className = 'back-to-top';
+        btn.type = 'button';
+        btn.setAttribute('aria-label', isEnglish ? 'Back to top' : '回到最上方');
+        btn.innerHTML = '<span aria-hidden="true">↑</span>';
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        document.body.appendChild(btn);
+        const toggleVisibility = () => {
+            if (window.scrollY > 200) btn.classList.add('show'); else btn.classList.remove('show');
+        };
+        window.addEventListener('scroll', toggleVisibility, { passive: true });
+        toggleVisibility();
+    }
     document.addEventListener('DOMContentLoaded', () => {
         const hRoot = document.getElementById('site-header');
         const fRoot = document.getElementById('site-footer');
@@ -69,5 +120,7 @@
         setActiveNav();
         ensureThemeColor();
         enhancePdfLinks();
+        initGlobalDismiss();
+        initBackToTop();
     });
 })();

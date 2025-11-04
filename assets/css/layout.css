@@ -195,6 +195,10 @@
     text-decoration: underline;
 }
 
+.lang-dropdown a[hreflang="zh-Hant"] {
+    font-family: 'KaiUWeb', serif !important;
+}
+
 /* increase space for larger arrow */
 .nav-lang summary {
     position: relative;
@@ -471,4 +475,48 @@
 .honors-hero {
     max-width: 680px;
     font-size: 1rem;
+}
+
+/* Back to top floating button */
+.back-to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    color: var(--color-text-invert);
+    display: grid;
+    place-items: center;
+    border: 0;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    transform: translateY(0);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+    .back-to-top {
+        right: 12px;
+        bottom: 12px;
+        width: 42px;
+        height: 42px;
+    }
 }
