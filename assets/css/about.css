@@ -37,12 +37,10 @@
     background: none;
     padding: 0 0 .45rem;
     font-size: 1.12rem;
-    /* header 字體略大 */
     font-weight: 600;
     letter-spacing: .5px;
     border: none;
     border-bottom: 2px solid var(--color-border);
-    /* 底線分隔 */
     border-radius: 0;
 }
 

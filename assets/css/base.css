@@ -1,6 +1,9 @@
 :root {
-    --font-sans: 'TimesNRWeb', 'KaiUWeb', 'MSMinchoWeb';
-    --font-serif: var(--font-sans);
+    --font-en: 'TimesNRWeb', serif;
+    --font-zh: 'TimesNRWeb', 'KaiUWeb', serif;
+    --font-ja: 'MSMinchoWeb', serif;
+    --font-sans: var(--font-en);
+    --font-serif: inherit;
     --color-bg: #0e1116;
     --color-surface: #1a1f27;
     --color-surface-alt: #222a35;
@@ -127,7 +130,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: var(--font-serif);
+    font-family: inherit;
     font-weight: 600;
     line-height: 1.25;
     margin: 0 0 .6em;
@@ -318,10 +321,6 @@ ol {
     border-radius: 2px;
 }
 
-.japanese {
-    font-family: "MSMinchoWeb";
-}
-
 footer {
     padding: 2.4rem 0 3rem;
     font-size: .875rem;
@@ -332,7 +331,6 @@ footer a {
     color: inherit;
 }
 
-/* Responsive */
 @media (max-width: 860px) {
     .hide-mobile {
         display: none !important;
@@ -351,4 +349,16 @@ footer a {
     .section {
         padding: 2.4rem 0 2.8rem;
     }
+}
+
+:lang(zh-Hant) {
+    font-family: var(--font-zh);
+}
+
+:lang(ja) {
+    font-family: var(--font-ja);
+}
+
+:lang(en) {
+    font-family: var(--font-en);
 }

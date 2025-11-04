@@ -48,13 +48,11 @@
     content: '-';
 }
 
-/* Record heading placed inside summary should have minimal margin */
 .acc-item>summary .record-heading {
     margin: .1rem 0;
     font-size: 1.14rem;
 }
 
-/* Panel spacing when content expands (lists typically follow) */
 .acc-item>.acc-panel,
 .acc-item>ol,
 .acc-item>ul {
