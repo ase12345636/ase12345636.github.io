@@ -196,7 +196,7 @@
 }
 
 .lang-dropdown a[hreflang="zh-Hant"] {
-    font-family: 'KaiUWeb', serif !important;
+    font-family: var(--font-zh);
 }
 
 /* increase space for larger arrow */

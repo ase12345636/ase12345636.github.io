@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'KaiUWeb';
+    font-family: 'BiauKaiWeb';
     font-style: normal;
     font-weight: 400;
     font-display: block;
@@ -23,9 +23,49 @@
 }
 
 @font-face {
+    font-family: 'TimesNRWeb';
+    font-style: italic;
+    font-weight: 400;
+    font-display: block;
+    src: url('../fonts/TimesNRI-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'TimesNRWeb';
+    font-style: italic;
+    font-weight: 500;
+    font-display: block;
+    src: url('../fonts/TimesNRI-500.woff2') format('woff2');
+}
+
+@font-face {
     font-family: 'MSMinchoWeb';
     font-style: normal;
     font-weight: 400;
     font-display: block;
     src: url('../fonts/MSMincho.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Yumin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: block;
+    src: url('../fonts/Yumin-300.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Yumin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('../fonts/Yumin-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Yumin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: block;
+    src: url('../fonts/Yumin-500.woff2') format('woff2');
 }
