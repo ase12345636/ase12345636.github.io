@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'BiauKaiWeb';
     font-style: normal;
-    font-weight: 400;
+    font-weight: normal;
     font-display: block;
     src: url('../fonts/BiauKai.woff2') format('woff2');
 }
@@ -9,63 +9,55 @@
 @font-face {
     font-family: 'TimesNRWeb';
     font-style: normal;
-    font-weight: 400;
+    font-weight: normal;
     font-display: block;
-    src: url('../fonts/TimesNR-400.woff2') format('woff2');
+    src: url('../fonts/TimesNR.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'TimesNRWeb';
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     font-display: block;
-    src: url('../fonts/TimesNR-500.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'TimesNRWeb';
-    font-style: italic;
-    font-weight: 400;
-    font-display: block;
-    src: url('../fonts/TimesNRI-400.woff2') format('woff2');
+    src: url('../fonts/TimesNRB.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'TimesNRWeb';
     font-style: italic;
-    font-weight: 500;
+    font-weight: normal;
     font-display: block;
-    src: url('../fonts/TimesNRI-500.woff2') format('woff2');
+    src: url('../fonts/TimesNRI.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'MSMinchoWeb';
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'TimesNRWeb';
+    font-style: italic;
+    font-weight: bold;
     font-display: block;
-    src: url('../fonts/MSMincho.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Yumin';
-    font-style: normal;
-    font-weight: 300;
-    font-display: block;
-    src: url('../fonts/Yumin-300.woff2') format('woff2');
+    src: url('../fonts/TimesNRIB.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Yumin';
     font-style: normal;
-    font-weight: 400;
+    font-weight: lighter;
     font-display: block;
-    src: url('../fonts/Yumin-400.woff2') format('woff2');
+    src: url('../fonts/YuminL.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Yumin';
     font-style: normal;
-    font-weight: 500;
+    font-weight: normal;
     font-display: block;
-    src: url('../fonts/Yumin-500.woff2') format('woff2');
+    src: url('../fonts/Yumin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Yumin';
+    font-style: normal;
+    font-weight: bold;
+    font-display: block;
+    src: url('../fonts/YuminB.woff2') format('woff2');
 }
