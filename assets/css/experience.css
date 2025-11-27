@@ -49,7 +49,7 @@
 
 .record-list.ordered>.record-item:before {
     left: var(--record-ol-num-left);
-    top: calc(var(--record-ol-num-top) + .02em);
+    top: .65rem;
 }
 
 .record-item h3 {
