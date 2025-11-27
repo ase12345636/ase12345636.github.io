@@ -15,7 +15,9 @@
     --record-item-pad-x: .85rem;
     --record-ol-indent: 1.9rem;
     --record-ol-num-left: .7rem;
-    --record-ol-num-top: .72rem;
+    --record-ol-num-top: var(--record-item-pad-y);
+    /* relative fine-tune for number baseline alignment */
+    --record-ol-num-shift: .14em;
 }
 
 /* Headings inside grouped record sections */
@@ -78,8 +80,11 @@
     position: absolute;
     left: var(--record-ol-num-left);
     top: var(--record-ol-num-top);
+    transform: translateY(var(--record-ol-num-shift));
+    line-height: 1;
     font-size: .75rem;
     font-weight: 600;
+    font-variant-numeric: lining-nums tabular-nums;
     color: var(--color-secondary);
 }
 
