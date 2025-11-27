@@ -363,14 +363,17 @@ footer a {
     font-family: var(--font-en);
 }
 
-@supports (zoom: 1.1) {
+/* Global scale: enlarge entire site by 25% */
+@supports (zoom: 1.25) {
     html {
-        zoom: 1.1;
+        zoom: 1.25;
     }
 }
 
-@supports not (zoom: 1.1) {
+@supports not (zoom: 1.25) {
+
+    /* Fallback (e.g., Firefox): scale rem-based layout/typography */
     html {
-        font-size: 110%;
+        font-size: 125%;
     }
 }
