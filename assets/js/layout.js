@@ -3,25 +3,41 @@
     function buildHeader() {
         const path = location.pathname.replace(/\\/g, '/');
         const isEnglish = /\/en\//.test(path);
-        const base = isEnglish ? '../' : '';
+        const isJapanese = /\/ja\//.test(path);
+        const base = (isEnglish || isJapanese) ? '../' : '';
         const languages = [
-            { code: 'zh-Hant', name: '中文', basePath: `${base}`, index: 'index.html', current: !isEnglish },
-            { code: 'en', name: 'English', basePath: `${base}en/`, index: 'index.html', current: isEnglish }
+            { code: 'zh-Hant', name: '中文', basePath: `${base}`, index: 'index.html', current: !isEnglish && !isJapanese },
+            { code: 'en', name: 'English', basePath: `${base}en/`, index: 'index.html', current: isEnglish },
+            { code: 'ja', name: '日本語', basePath: `${base}ja/`, index: 'index.html', current: isJapanese }
         ];
         const langDropdown = `<li class="nav-lang"><details><summary><span class="lang-label">Language</span></summary><ul class="lang-dropdown">${languages.map(l => `<li><a class="lang-link${l.current ? ' active-lang' : ''}" hreflang="${l.code}" lang="${l.code}" href="${l.basePath}${l.index}">${l.name}</a></li>`).join('')}</ul></details></li>`;
-        const brandHref = isEnglish ? `${base}en/index.html` : `${base}index.html`;
-        const labels = isEnglish
-            ? { home: 'Home', about: 'About', edu: 'Education', exp: 'Experience', pubs: 'Publication', honors: 'Honor', toggle: 'Toggle menu' }
-            : { home: '首頁', about: '簡介', edu: '學歷', exp: '經歷', pubs: '著作', honors: '榮譽', toggle: '切換選單' };
-        const prefix = isEnglish ? `${base}en/` : `${base}`;
+        const brandHref = (isEnglish || isJapanese) ? `${base}ja/index.html` : `${base}index.html`;
+        let labels, prefix;
+        if (isEnglish) {
+            labels = { home: 'Home', about: 'About', edu: 'Education', exp: 'Experience', pubs: 'Publication', honors: 'Honor', toggle: 'Toggle menu' };
+            prefix = `${base}en/`;
+        } else if (isJapanese) {
+            labels = { home: 'ホーム', about: 'プロフィール', edu: '学歴', exp: '経歴', pubs: '出版物', honors: '栄誉', toggle: 'メニューを切り替える' };
+            prefix = `${base}ja/`;
+        } else {
+            labels = { home: '首頁', about: '簡介', edu: '學歷', exp: '經歷', pubs: '著作', honors: '榮譽', toggle: '切換選單' };
+            prefix = `${base}`;
+        }
         return `\n<header class="header">\n  <div class="container navbar">\n    <a class="brand" href="${brandHref}">\n      <img src="${base}assets/img/memu.webp" alt="Profile" loading="lazy" />\n      <span class="brand-name" lang="zh-Hant">張簡雲翔</span>\n    </a>\n    <button class="nav-toggle" aria-label="${labels.toggle}" aria-expanded="false"><span></span></button>\n    <div class="nav-menu-wrapper">\n      <ul class="nav-menu">\n        <li><a href="${prefix}index.html">${labels.home}</a></li>\n        <li><a href="${prefix}about.html">${labels.about}</a></li>\n        <li><a href="${prefix}education.html">${labels.edu}</a></li>\n        <li><a href="${prefix}experience.html">${labels.exp}</a></li>\n        <li><a href="${prefix}publications.html">${labels.pubs}</a></li>\n        <li><a href="${prefix}honors.html">${labels.honors}</a></li>\n        ${langDropdown}\n      </ul>\n    </div>\n  </div>\n</header>`;
     }
     const headerHTML = buildHeader();
     const footerHTML = (() => {
-        const isEnglish = /\/en\//.test(location.pathname.replace(/\\/g, '/'));
+        const pathNorm = location.pathname.replace(/\\/g, '/');
+        const isEnglish = /\/en\//.test(pathNorm);
+        const isJapanese = /\/ja\//.test(pathNorm);
         const year = new Date().getFullYear();
         const baseFooter = `Copyright © ${year} <span class="cn-name" lang="zh-Hant">張簡雲翔</span>`;
-        const footnote = isEnglish ? `<div class="footnote" style="margin-top:.75rem;font-size:.7rem;line-height:1.4;color:#889099;">This English page is a translation of the original Traditional Chinese content. In the event of any inconsistency or ambiguity between the English and Chinese versions, the Traditional Chinese version shall prevail.</div>` : '';
+        let footnote = '';
+        if (isEnglish) {
+            footnote = `<div class="footnote" style="margin-top:.75rem;font-size:.7rem;line-height:1.4;color:#889099;">This English page is a translation of the original Traditional Chinese content. In the event of any inconsistency or ambiguity between the English and Traditional Chinese versions, the Traditional Chinese version shall prevail.</div>`;
+        } else if (isJapanese) {
+            footnote = `<div class="footnote" style="margin-top:.75rem;font-size:.7rem;line-height:1.4;color:#889099;">このページは台湾華語版を翻訳したものです。日本語版と台湾華語版の内容に相違がある場合は、台湾華語版を正とします。</div>`;
+        }
         return `\n<footer aria-label="頁尾"><div class="container"><div>${baseFooter}</div>${footnote}</div></footer>`;
     })();
     function ensureThemeColor() {
