@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    function buildHeader() {
+    function buildHeaderElement() {
         const path = location.pathname.replace(/\\/g, '/');
         const isEnglish = /\/en\//.test(path);
         const isJapanese = /\/ja\//.test(path);
@@ -10,7 +10,6 @@
             { code: 'en', name: 'English', basePath: `${base}en/`, index: 'index.html', current: isEnglish },
             { code: 'ja', name: '日本語', basePath: `${base}ja/`, index: 'index.html', current: isJapanese }
         ];
-        const langDropdown = `<li class="nav-lang"><details><summary><span class="lang-label">Language</span></summary><ul class="lang-dropdown">${languages.map(l => `<li><a class="lang-link${l.current ? ' active-lang' : ''}" hreflang="${l.code}" lang="${l.code}" href="${l.basePath}${l.index}">${l.name}</a></li>`).join('')}</ul></details></li>`;
         const brandHref = (isEnglish || isJapanese) ? `${base}ja/index.html` : `${base}index.html`;
         let labels, prefix;
         if (isEnglish) {
@@ -23,23 +22,118 @@
             labels = { home: '首頁', about: '簡介', edu: '學歷', exp: '經歷', pubs: '著作', honors: '榮譽', toggle: '切換選單' };
             prefix = `${base}`;
         }
-        return `\n<header class="header">\n  <div class="container navbar">\n    <a class="brand" href="${brandHref}">\n      <img src="${base}assets/img/memu.webp" alt="Profile" loading="lazy" />\n      <span class="brand-name" lang="zh-Hant">張簡雲翔</span>\n    </a>\n    <button class="nav-toggle" aria-label="${labels.toggle}" aria-expanded="false"><span></span></button>\n    <div class="nav-menu-wrapper">\n      <ul class="nav-menu">\n        <li><a href="${prefix}index.html">${labels.home}</a></li>\n        <li><a href="${prefix}about.html">${labels.about}</a></li>\n        <li><a href="${prefix}education.html">${labels.edu}</a></li>\n        <li><a href="${prefix}experience.html">${labels.exp}</a></li>\n        <li><a href="${prefix}publications.html">${labels.pubs}</a></li>\n        <li><a href="${prefix}honors.html">${labels.honors}</a></li>\n        ${langDropdown}\n      </ul>\n    </div>\n  </div>\n</header>`;
+        const header = document.createElement('header');
+        header.className = 'header';
+        const container = document.createElement('div');
+        container.className = 'container navbar';
+        header.appendChild(container);
+
+        const brand = document.createElement('a');
+        brand.className = 'brand';
+        brand.href = brandHref;
+        const logo = document.createElement('img');
+        logo.src = `${base}assets/img/memu.webp`;
+        logo.alt = 'Profile';
+        logo.loading = 'lazy';
+        const brandName = document.createElement('span');
+        brandName.className = 'brand-name';
+        brandName.lang = 'zh-Hant';
+        brandName.textContent = '張簡雲翔';
+        brand.append(logo, brandName);
+        container.appendChild(brand);
+
+        const toggle = document.createElement('button');
+        toggle.className = 'nav-toggle';
+        toggle.setAttribute('aria-label', labels.toggle);
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.appendChild(document.createElement('span'));
+        container.appendChild(toggle);
+
+        const menuWrapper = document.createElement('div');
+        menuWrapper.className = 'nav-menu-wrapper';
+        const menu = document.createElement('ul');
+        menu.className = 'nav-menu';
+
+        const addNavItem = (href, text) => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = href;
+            a.textContent = text;
+            li.appendChild(a);
+            menu.appendChild(li);
+        };
+        addNavItem(`${prefix}index.html`, labels.home);
+        addNavItem(`${prefix}about.html`, labels.about);
+        addNavItem(`${prefix}education.html`, labels.edu);
+        addNavItem(`${prefix}experience.html`, labels.exp);
+        addNavItem(`${prefix}publications.html`, labels.pubs);
+        addNavItem(`${prefix}honors.html`, labels.honors);
+
+        const langLi = document.createElement('li');
+        langLi.className = 'nav-lang';
+        const details = document.createElement('details');
+        const summary = document.createElement('summary');
+        const langLabel = document.createElement('span');
+        langLabel.className = 'lang-label';
+        langLabel.textContent = 'Language';
+        summary.appendChild(langLabel);
+        const langList = document.createElement('ul');
+        langList.className = 'lang-dropdown';
+        languages.forEach((lang) => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.className = `lang-link${lang.current ? ' active-lang' : ''}`;
+            a.hreflang = lang.code;
+            a.lang = lang.code;
+            a.href = `${lang.basePath}${lang.index}`;
+            a.textContent = lang.name;
+            li.appendChild(a);
+            langList.appendChild(li);
+        });
+        details.append(summary, langList);
+        langLi.appendChild(details);
+        menu.appendChild(langLi);
+
+        menuWrapper.appendChild(menu);
+        container.appendChild(menuWrapper);
+        return header;
     }
-    const headerHTML = buildHeader();
-    const footerHTML = (() => {
+    function buildFooterElement() {
         const pathNorm = location.pathname.replace(/\\/g, '/');
         const isEnglish = /\/en\//.test(pathNorm);
         const isJapanese = /\/ja\//.test(pathNorm);
         const year = new Date().getFullYear();
-        const baseFooter = `Copyright © ${year} <span class="cn-name" lang="zh-Hant">張簡雲翔</span>`;
-        let footnote = '';
-        if (isEnglish) {
-            footnote = `<div class="footnote" style="margin-top:.75rem;font-size:.7rem;line-height:1.4;color:#889099;">This English page is a translation of the original Traditional Chinese content. In the event of any inconsistency or ambiguity between the English and Traditional Chinese versions, the Traditional Chinese version shall prevail.</div>`;
-        } else if (isJapanese) {
-            footnote = `<div class="footnote" style="margin-top:.75rem;font-size:.7rem;line-height:1.4;color:#889099;">このページは台湾華語版を翻訳したものです。日本語版と台湾華語版の内容に相違がある場合は、台湾華語版を正とします。</div>`;
+
+        const footer = document.createElement('footer');
+        footer.setAttribute('aria-label', '頁尾');
+        const container = document.createElement('div');
+        container.className = 'container';
+
+        const baseFooter = document.createElement('div');
+        baseFooter.append(`Copyright © ${year} `);
+        const name = document.createElement('span');
+        name.className = 'cn-name';
+        name.lang = 'zh-Hant';
+        name.textContent = '張簡雲翔';
+        baseFooter.appendChild(name);
+        container.appendChild(baseFooter);
+
+        if (isEnglish || isJapanese) {
+            const footnote = document.createElement('div');
+            footnote.className = 'footnote';
+            footnote.style.marginTop = '.75rem';
+            footnote.style.fontSize = '.7rem';
+            footnote.style.lineHeight = '1.4';
+            footnote.style.color = '#889099';
+            footnote.textContent = isEnglish
+                ? 'This English page is a translation of the original Traditional Chinese content. In the event of any inconsistency or ambiguity between the English and Traditional Chinese versions, the Traditional Chinese version shall prevail.'
+                : 'このページは台湾華語版を翻訳したものです。日本語版と台湾華語版の内容に相違がある場合は、台湾華語版を正とします。';
+            container.appendChild(footnote);
         }
-        return `\n<footer aria-label="頁尾"><div class="container"><div>${baseFooter}</div>${footnote}</div></footer>`;
-    })();
+
+        footer.appendChild(container);
+        return footer;
+    }
     function ensureThemeColor() {
         if (document.querySelector('meta[name="theme-color"]')) return; // fixed selector
         const meta = document.createElement('meta');
@@ -116,7 +210,10 @@
         btn.className = 'back-to-top';
         btn.type = 'button';
         btn.setAttribute('aria-label', isEnglish ? 'Back to top' : '回到最上方');
-        btn.innerHTML = '<span aria-hidden="true">↑</span>';
+        const icon = document.createElement('span');
+        icon.setAttribute('aria-hidden', 'true');
+        icon.textContent = '↑';
+        btn.appendChild(icon);
         btn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
@@ -130,8 +227,8 @@
     document.addEventListener('DOMContentLoaded', () => {
         const hRoot = document.getElementById('site-header');
         const fRoot = document.getElementById('site-footer');
-        if (hRoot) hRoot.innerHTML = headerHTML;
-        if (fRoot) fRoot.innerHTML = footerHTML;
+        if (hRoot) hRoot.replaceChildren(buildHeaderElement());
+        if (fRoot) fRoot.replaceChildren(buildFooterElement());
         initNavInteractions();
         setActiveNav();
         ensureThemeColor();
