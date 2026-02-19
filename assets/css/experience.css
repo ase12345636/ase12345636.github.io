@@ -15,14 +15,6 @@
     margin-bottom: 0;
 }
 
-/* First heading margin now controlled by components-record.css vars */
-
-/* 保留舊樣式備份 (如需回退) */
-/*
-.exp-subtitle { ... }
-.exp-subtitle:before { ... }
-*/
-
 .timeline-item ul.bullets {
     margin: .4rem 0 .2rem 1.1rem;
     font-size: .85rem;
@@ -40,16 +32,11 @@
 
 .record-list.ordered>.record-item {
     margin: 0 0 .45rem;
-    padding: .7rem .75rem .75rem var(--record-ol-indent);
+    padding: .7rem .75rem .75rem;
 }
 
 .record-list.ordered>.record-item:last-child {
     margin-bottom: 0;
-}
-
-.record-list.ordered>.record-item:before {
-    left: var(--record-ol-num-left);
-    top: .65rem;
 }
 
 .record-item h3 {

@@ -91,10 +91,7 @@
 }
 
 .record-list.ordered>.record-item:before {
-    font-size: .8rem;
     font-family: var(--font-sans);
-    line-height: 1;
-    top: 1.0rem;
 }
 
 .record-list.ordered>.record-item>.citation:first-child {

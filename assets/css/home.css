@@ -48,7 +48,6 @@
     font-size: .65rem;
     letter-spacing: .5px;
     font-weight: 600;
-    border: 1px solid var(--color-secondary);
     color: #fff;
     padding: .55rem .4rem;
     border: 1px solid var(--color-border);
@@ -57,8 +56,6 @@
     transition: var(--transition);
     text-decoration: none;
     margin-right: .4rem;
-
-    /* font-size: clamp(.65rem, .6vw, .7rem); */
 }
 
 .social-mini-btn:hover {
@@ -79,30 +76,31 @@
 }
 
 .featured-pubs>li {
-    position: relative;
-    padding-left: 2.1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: .5rem;
+    align-items: baseline;
     margin: .9rem 0 1.1rem;
+}
+
+.featured-pubs>li>* {
+    grid-column: 2;
 }
 
 .featured-pubs>li:before {
     counter-increment: feat;
     content: counter(feat) ".";
-    position: absolute;
-    left: 0;
-    /* 調整垂直位置讓數字基線與文字首行對齊 */
-    top: .3rem;
-    /* 如仍偏高/低可微調 ±.02rem */
+    grid-column: 1;
+    grid-row: 1;
     font-weight: 600;
-    font-size: .82rem;
-    /* 與 citation 文字一致，避免視覺高度差 */
-    line-height: 1;
+    font-size: .75rem;
     color: #fff;
     opacity: .85;
 }
 
 .featured-pubs .citation {
     margin: 0;
-    font-size: .82rem;
+    font-size: .95rem;
     line-height: 1.55;
 }
 
@@ -110,7 +108,7 @@
     display: inline-block;
     margin-top: .35rem;
     margin-right: .55rem;
-    font-size: .6rem;
+    font-size: .65rem;
     letter-spacing: .5px;
     font-weight: 600;
     text-transform: uppercase;

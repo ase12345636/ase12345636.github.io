@@ -24,7 +24,6 @@
     user-select: none;
     font-weight: 500;
     font-size: .95rem;
-    /* default summary text size */
     outline: none;
     padding: .15rem 0;
 }
@@ -33,13 +32,10 @@
     display: none;
 }
 
-/* Plus / minus icon to right */
-/* Unified plus/minus icon sizing */
 .acc-item>summary::after {
     content: '+';
     margin-left: auto;
     font-size: 1.05rem;
-    /* unified size */
     line-height: 1;
     font-weight: 600;
 }

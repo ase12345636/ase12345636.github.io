@@ -13,9 +13,6 @@
     --record-item-gap: .55rem;
     --record-item-pad-y: .8rem;
     --record-item-pad-x: .85rem;
-    --record-ol-indent: 1.9rem;
-    --record-ol-num-left: .7rem;
-    --record-ol-num-top: .72rem;
 }
 
 /* Headings inside grouped record sections */
@@ -43,10 +40,8 @@
     margin-bottom: 0;
 }
 
-/* Ordered version with custom counter */
 .record-list.ordered {
     counter-reset: item;
-    /* single counter name reused */
 }
 
 /* Base record item (applies to ordered & unordered lists) */
@@ -65,7 +60,15 @@
 }
 
 .record-list.ordered>.record-item {
-    padding: var(--record-item-pad-y) var(--record-item-pad-x) calc(var(--record-item-pad-y) + .05rem) var(--record-ol-indent);
+    display: grid;
+    grid-template-columns: 0.8rem 1fr;
+    column-gap: .25rem;
+    align-items: baseline;
+    padding: var(--record-item-pad-y) var(--record-item-pad-x) calc(var(--record-item-pad-y) + .05rem);
+}
+
+.record-list.ordered>.record-item>* {
+    grid-column: 2;
 }
 
 .record-list.ordered>.record-item:last-child {
@@ -75,12 +78,12 @@
 .record-list.ordered>.record-item:before {
     counter-increment: item;
     content: counter(item) ".";
-    position: absolute;
-    left: var(--record-ol-num-left);
-    top: var(--record-ol-num-top);
+    grid-column: 1;
+    grid-row: 1;
     font-size: .75rem;
     font-weight: 600;
     color: var(--color-secondary);
+    text-align: right;
 }
 
 /* Shared title inside item */
@@ -88,7 +91,6 @@
     margin: 0 0 .18rem;
     font-size: .95rem;
     font-weight: 400;
-    /* normal weight */
 }
 
 /* Meta variants */
@@ -107,7 +109,7 @@
 }
 
 .record-meta-advisor {
-    font-size: .68rem;
+    font-size: .72rem;
     font-weight: 400;
     color: var(--color-secondary);
 }
@@ -115,7 +117,7 @@
 /* Additional text block inside record */
 .record-item p {
     margin: .35rem 0 0;
-    font-size: .8rem;
+    font-size: .85rem;
     line-height: 1.5;
 }
 
@@ -124,7 +126,7 @@
 .record-item .tight-points {
     margin: .3rem 0 0 1rem;
     padding: 0;
-    font-size: .8rem;
+    font-size: .82rem;
     line-height: 1.45;
 }
 
@@ -137,17 +139,12 @@
 }
 
 .citation {
-    font-size: .8rem;
+    font-size: .95rem;
     line-height: 1.5;
     margin: .15rem 0 0;
 }
 
 .record-list.pubs>.record-item {
-    padding: .9rem .9rem 1rem 2.2rem;
+    padding: .9rem .9rem 1rem;
     margin: 0 0 .7rem;
-}
-
-.record-list.pubs>.record-item:before {
-    left: .85rem;
-    top: .9rem;
 }
