@@ -18,7 +18,7 @@
 
 /* Assignment description area */
 .assignment-description {
-    margin-top: 0.8rem;
+    margin-top: 0.2rem;
     min-height: 60px;
     padding: 0.8rem;
     background: var(--color-soft-bg);
@@ -58,6 +58,14 @@
     display: flex;
     justify-content: flex-start;
     margin: 0;
+}
+
+.citation .pub-links {
+    margin: 0;
+}
+
+.record-group .citation a:first-of-type {
+    margin-top: 0;
 }
 
 @media (max-width: 768px) {
