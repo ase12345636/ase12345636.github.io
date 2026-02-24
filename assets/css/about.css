@@ -19,6 +19,20 @@
     color: var(--color-muted);
 }
 
+.profile-meta .nowrap-line {
+    white-space: nowrap;
+}
+
+.profile-meta .furigana {
+    font-size: .72rem;
+}
+
+.profile-meta .position-item {
+    display: block;
+    font-size: .78rem;
+    white-space: nowrap;
+}
+
 .bio {
     font-size: 1rem;
     line-height: 1.7;
