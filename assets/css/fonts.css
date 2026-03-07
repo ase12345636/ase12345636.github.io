@@ -3,7 +3,9 @@
     font-style: normal;
     font-weight: normal;
     font-display: block;
-    src: url('../fonts/BiauKai.woff2') format('woff2');
+    src: local('標楷體'),
+        local('DFKai-SB'),
+        url('../fonts/BiauKai.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,7 +13,8 @@
     font-style: normal;
     font-weight: normal;
     font-display: block;
-    src: url('../fonts/TimesNR.woff2') format('woff2');
+    src: local('Times New Roman'),
+        url('../fonts/TimesNR.woff2') format('woff2');
 }
 
 @font-face {
@@ -19,7 +22,9 @@
     font-style: normal;
     font-weight: bold;
     font-display: block;
-    src: url('../fonts/TimesNRB.woff2') format('woff2');
+    src: local('Times New Roman Bold'),
+        local('Times New Roman'),
+        url('../fonts/TimesNRB.woff2') format('woff2');
 }
 
 @font-face {
@@ -27,7 +32,9 @@
     font-style: italic;
     font-weight: normal;
     font-display: block;
-    src: url('../fonts/TimesNRI.woff2') format('woff2');
+    src: local('Times New Roman Italic'),
+        local('Times New Roman'),
+        url('../fonts/TimesNRI.woff2') format('woff2');
 }
 
 @font-face {
@@ -35,7 +42,9 @@
     font-style: italic;
     font-weight: bold;
     font-display: block;
-    src: url('../fonts/TimesNRIB.woff2') format('woff2');
+    src: local('Times New Roman Bold Italic'),
+        local('Times New Roman'),
+        url('../fonts/TimesNRIB.woff2') format('woff2');
 }
 
 @font-face {
@@ -43,7 +52,10 @@
     font-style: normal;
     font-weight: lighter;
     font-display: block;
-    src: url('../fonts/YuminL.woff2') format('woff2');
+    src: local('游明朝 Light'),
+        local('Yu Mincho Light'),
+        local('YuMincho-Light'),
+        url('../fonts/YuminL.woff2') format('woff2');
 }
 
 @font-face {
@@ -51,7 +63,10 @@
     font-style: normal;
     font-weight: normal;
     font-display: block;
-    src: url('../fonts/Yumin.woff2') format('woff2');
+    src: local('游明朝'),
+        local('Yu Mincho'),
+        local('YuMincho-Regular'),
+        url('../fonts/Yumin.woff2') format('woff2');
 }
 
 @font-face {
@@ -59,5 +74,8 @@
     font-style: normal;
     font-weight: bold;
     font-display: block;
-    src: url('../fonts/YuminB.woff2') format('woff2');
+    src: local('游明朝 Bold'),
+        local('Yu Mincho Bold'),
+        local('YuMincho-Bold'),
+        url('../fonts/YuminB.woff2') format('woff2');
 }

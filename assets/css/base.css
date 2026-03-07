@@ -1,7 +1,7 @@
 :root {
-    --font-en: 'TimesNRWeb', serif;
-    --font-zh: 'TimesNRWeb', 'BiauKaiWeb', serif;
-    --font-ja: 'Yumin', serif;
+    --font-en: 'TimesNRWeb', 'Times New Roman', serif;
+    --font-zh: 'TimesNRWeb', 'BiauKaiWeb', 'Times New Roman', '標楷體', serif;
+    --font-ja: 'Yumin', '游明朝', 'Yu Mincho', serif;
     --font-sans: var(--font-en);
     --font-serif: inherit;
     --color-bg: #0e1116;
