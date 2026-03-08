@@ -19,23 +19,22 @@
 
 @font-face {
     font-family: 'TimesNRWeb';
-    font-style: normal;
-    font-weight: bold;
-    font-display: block;
-    src: local('Times New Roman Bold'),
-        local('Times New Roman'),
-        url('../fonts/TimesNRB.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'TimesNRWeb';
     font-style: italic;
     font-weight: normal;
     font-display: block;
     src: local('Times New Roman Italic'),
-        local('Times New Roman'),
         url('../fonts/TimesNRI.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'TimesNRWeb';
+    font-style: normal;
+    font-weight: bold;
+    font-display: block;
+    src: local('Times New Roman Bold'),
+        url('../fonts/TimesNRB.woff2') format('woff2');
+}
+
 
 @font-face {
     font-family: 'TimesNRWeb';
@@ -43,7 +42,6 @@
     font-weight: bold;
     font-display: block;
     src: local('Times New Roman Bold Italic'),
-        local('Times New Roman'),
         url('../fonts/TimesNRIB.woff2') format('woff2');
 }
 
@@ -52,9 +50,7 @@
     font-style: normal;
     font-weight: lighter;
     font-display: block;
-    src: local('游明朝 Light'),
-        local('Yu Mincho Light'),
-        local('YuMincho-Light'),
+    src: local('Yu Mincho Light'),
         url('../fonts/YuminL.woff2') format('woff2');
 }
 
@@ -63,9 +59,7 @@
     font-style: normal;
     font-weight: normal;
     font-display: block;
-    src: local('游明朝'),
-        local('Yu Mincho'),
-        local('YuMincho-Regular'),
+    src: local('Yu Mincho Regular'),
         url('../fonts/Yumin.woff2') format('woff2');
 }
 
@@ -74,8 +68,6 @@
     font-style: normal;
     font-weight: bold;
     font-display: block;
-    src: local('游明朝 Bold'),
-        local('Yu Mincho Bold'),
-        local('YuMincho-Bold'),
+    src: local('Yu Mincho Demibold'),
         url('../fonts/YuminB.woff2') format('woff2');
 }
