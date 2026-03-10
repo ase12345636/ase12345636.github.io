@@ -68,35 +68,7 @@
     font-weight: 700;
 }
 
-.featured-pubs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    counter-reset: feat;
-}
 
-.featured-pubs>li {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: .5rem;
-    align-items: baseline;
-    margin: .9rem 0 1.1rem;
-}
-
-.featured-pubs>li>* {
-    grid-column: 2;
-}
-
-.featured-pubs>li:before {
-    counter-increment: feat;
-    content: counter(feat) ".";
-    grid-column: 1;
-    grid-row: 1;
-    font-weight: 600;
-    font-size: .75rem;
-    color: #fff;
-    opacity: .85;
-}
 
 .featured-pubs .citation {
     margin: 0;
