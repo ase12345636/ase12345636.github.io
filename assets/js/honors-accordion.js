@@ -1,11 +1,6 @@
-// Honors page study-related accordion mutual exclusion
-// Scoped to #study-accordion (求學相關)
+// Honors page nested accordion mutual exclusion
 
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('study-accordion');
-    if (!container) return;
-    const items = Array.from(container.querySelectorAll('details.acc-item'));
-
     function scrollToItem(el) {
         if (!el) return;
         const header = document.querySelector('.header');
@@ -17,29 +12,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         const rect = el.getBoundingClientRect();
-        const top = rect.top + window.scrollY - offset - 8; // small gap
+        const top = rect.top + window.scrollY - offset - 8;
         const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top, behavior: prefersReduced ? 'auto' : 'smooth' });
     }
 
-    // Mutual exclusion among nested level (高中 / 國中 / 國小 / 幼稚園)
-    items.forEach(item => {
+    // Mutual exclusion among nested details within each .acc-nested
+    document.querySelectorAll('.acc-nested').forEach(container => {
+        const items = Array.from(container.querySelectorAll(':scope > details.acc-item'));
+        if (!items.length) return;
+
+        items.forEach(item => {
+            item.addEventListener('toggle', () => {
+                if (!item.open) return;
+                items.forEach(o => { if (o !== item && o.open) o.open = false; });
+                setTimeout(() => scrollToItem(item), 0);
+            });
+        });
+
+        // When outer accordion is closed, close all inner details too
+        const outer = container.closest('details.acc-item');
+        if (outer) {
+            outer.addEventListener('toggle', () => {
+                if (!outer.open) {
+                    items.forEach(o => { if (o.open) o.open = false; });
+                }
+            });
+        }
+    });
+
+    // Mutual exclusion among top-level record-group accordions
+    const topItems = Array.from(document.querySelectorAll('.record-group > details.acc-item'));
+    topItems.forEach(item => {
         item.addEventListener('toggle', () => {
-            if (!item.open) return; // only act when opening one
-            // close others
-            items.forEach(o => { if (o !== item && o.open) o.open = false; });
-            // after layout updates, scroll to the item being opened
+            if (!item.open) return;
+            topItems.forEach(o => {
+                if (o !== item && o.open) o.open = false;
+            });
             setTimeout(() => scrollToItem(item), 0);
         });
     });
-
-    // Also ensure: when outer "求學獎項" is closed, all inner details close too.
-    const outer = container.closest('details.acc-item');
-    if (outer) {
-        outer.addEventListener('toggle', () => {
-            if (!outer.open) {
-                items.forEach(o => { if (o.open) o.open = false; });
-            }
-        });
-    }
 });
